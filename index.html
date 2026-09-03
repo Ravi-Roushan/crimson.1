@@ -389,6 +389,99 @@
  #crimbot-launcher .crimbot-smile{left:7px!important;width:8px!important;}
 }
 </style>
+
+<style id="crimbot-final-user-refinement">
+/* Final CrimBot layout: compact desktop, lower mobile launcher, six options without scrolling */
+#crimbot-panel{
+  width:320px !important;
+  height:470px !important;
+  max-width:calc(100vw - 36px) !important;
+  max-height:470px !important;
+  border-radius:16px !important;
+}
+#crimbot-launcher{
+  right:18px !important;
+  bottom:8px !important;
+}
+.crimbot-body{
+  padding:12px !important;
+  gap:10px !important;
+}
+.crimbot-answer{
+  max-height:none !important;
+  overflow:visible !important;
+  font-size:11px !important;
+}
+.crimbot-chat-log{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.crimbot-chat-bot,.crimbot-chat-user{
+  max-width:92%;
+  font-size:11px;
+  line-height:1.45;
+  padding:8px 10px;
+  border-radius:10px;
+}
+.crimbot-quick{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  grid-template-rows:repeat(2,auto) !important;
+  gap:6px !important;
+  max-height:none !important;
+  overflow:visible !important;
+  padding:0 !important;
+  scrollbar-width:none !important;
+}
+.crimbot-quick::-webkit-scrollbar{display:none !important}
+.crimbot-quick button{
+  width:100% !important;
+  min-width:0 !important;
+  min-height:34px !important;
+  height:34px !important;
+  padding:5px 4px !important;
+  text-align:center !important;
+  white-space:nowrap !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  font-size:9px !important;
+  border-radius:9px !important;
+}
+.crimbot-input{
+  padding:8px !important;
+  gap:6px !important;
+}
+.crimbot-input input{
+  height:34px !important;
+  padding:7px 9px !important;
+  font-size:10px !important;
+}
+.crimbot-input button{
+  height:34px !important;
+  padding:0 10px !important;
+  font-size:10px !important;
+}
+@media (max-width:600px){
+  #crimbot-launcher{
+    right:12px !important;
+    bottom:0px !important;
+    width:44px !important;
+    height:44px !important;
+  }
+  .crimbot-mark{width:36px !important;height:36px !important}
+  #crimbot-panel{
+    right:10px !important;
+    width:calc(100vw - 20px) !important;
+    height:min(440px,64vh) !important;
+    max-height:min(440px,64vh) !important;
+  }
+  .crimbot-quick{
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <!-- ═══════════════════════════════════════════════
@@ -443,7 +536,7 @@
 <section aria-label="The Crimson Hero Video" class="hero" id="hero">
 <!-- Background video shared across desktop and mobile banners -->
 <div class="hero__bg">
-<video aria-hidden="true" autoplay="" class="hero__bg-video" disablepictureinpicture="" id="heroVideo" loop="" playsinline="" preload="auto">
+<video aria-hidden="true" autoplay="" muted="" class="hero__bg-video" disablepictureinpicture="" id="heroVideo" loop="" playsinline="" preload="auto">
 <source src="assets/banners/THE CRIMSON AV_15_Final.mp4" type="video/mp4"/>
 </video>
 </div>
@@ -503,17 +596,17 @@
           loop
           muted
           playsinline
-          preload="none"
+          preload="auto"
           disablepictureinpicture
           aria-hidden="true"
         >
           <source
-            data-src="assets/banners/magnific_just-show-clouds-moving-do-not-move-the-building-d_seedance_480p_16-9_24fps_8278.mp4"
+            src="assets/banners/magnific_just-show-clouds-moving-do-not-move-the-building-d_seedance_480p_16-9_24fps_8278.mp4"
             type="video/mp4"
           />
           <!-- Fallback: identical encode, different seed -->
           <source
-            data-src="assets/banners/magnific_just-show-clouds-moving-do-not-move-the-building-d_seedance_480p_16-9_24fps_8279.mp4"
+            src="assets/banners/magnific_just-show-clouds-moving-do-not-move-the-building-d_seedance_480p_16-9_24fps_8279.mp4"
             type="video/mp4"
           />
         </video>
@@ -523,7 +616,7 @@
           loop
           muted
           playsinline
-          preload="none"
+          preload="auto"
           disablepictureinpicture
           aria-hidden="true"
         >
@@ -533,7 +626,7 @@
           />
           <!-- Fallback: identical encode, different seed -->
           <source
-            data-src="assets/banners/magnific_just-show-clouds-moving-do-not-move-the-building-d_seedance_480p_16-9_24fps_8279.mp4"
+            src="assets/banners/magnific_just-show-clouds-moving-do-not-move-the-building-d_seedance_480p_16-9_24fps_8279.mp4"
             type="video/mp4"
           />
         </video>
@@ -594,11 +687,11 @@
 <section aria-labelledby="art-deco-heading" class="art-deco-section" id="about-deco">
 <!-- Background video showing line-art building on the right -->
 <div aria-hidden="true" class="art-deco-section__video-wrap">
-<video autoplay="" class="art-deco-section__video" disablepictureinpicture="" loop="" muted="" playsinline="" preload="none">
-<source data-src="assets/banners/magnific_show-the-building-line-ar_CHWRDZBEEy.mp4" type="video/mp4"/>
+<video autoplay="" class="art-deco-section__video" disablepictureinpicture="" loop="" muted="" playsinline="" preload="auto">
+<source src="assets/banners/magnific_show-the-building-line-ar_CHWRDZBEEy.mp4" type="video/mp4"/>
 </video>
-<video autoplay="" class="art-deco-section__video_mobile" disablepictureinpicture="" loop="" muted="" playsinline="" poster="assets/banners/mobile_art_deco.webp" preload="none">
-<source data-src="assets/banners/mobile-banner-2.mp4" type="video/mp4"/>
+<video autoplay="" class="art-deco-section__video_mobile" disablepictureinpicture="" loop="" muted="" playsinline="" poster="assets/banners/mobile_art_deco.webp" preload="auto">
+<source src="assets/banners/mobile-banner-2.mp4" type="video/mp4"/>
 </video>
 </div>
 <!-- Left aligned content block -->
@@ -628,8 +721,8 @@
 <section aria-labelledby="expectations-heading" class="expectations-section" id="about-expectations">
 <!-- Background sky and building image overlay -->
 <div aria-hidden="true" class="expectations-section__bg-wrap">
-<img alt="Sky background with clouds" class="expectations-section__sky-bg" decoding="async" height="719" loading="lazy" src="assets/banners/cloud.webp" width="1728"/>
-<img alt="The Crimson Tower Building structure" class="expectations-section__building-fg" decoding="async" height="714" loading="lazy" src="assets/banners/image building.webp" width="1728"/>
+<img alt="Sky background with clouds" class="expectations-section__sky-bg" decoding="async" height="719" src="assets/banners/cloud.webp" width="1728"/>
+<img alt="The Crimson Tower Building structure" class="expectations-section__building-fg" decoding="async" height="714" src="assets/banners/image building.webp" width="1728"/>
 </div>
 <!-- Left aligned content block -->
 <div class="expectations-section__content reveal">
@@ -678,17 +771,17 @@
 </div>
 <!-- Layout Container -->
 <div class="catalogue__layout">
-<img alt="" class="catalouge-img" decoding="async" height="1965" loading="lazy" src="assets/banners/catalouge-img.webp" width="1760"/>
+<img alt="" class="catalouge-img" decoding="async" height="1965" src="assets/banners/catalouge-img.webp" width="1760"/>
 <!-- Center Building Container -->
 <div class="catalogue__building-container">
-<img alt="The Crimson Tower Structure Blueprint and Connector Lines" class="catalogue__building-img" decoding="async" height="482" loading="lazy" src="assets/arrows/building adjust.webp" width="272"/>
+<img alt="The Crimson Tower Structure Blueprint and Connector Lines" class="catalogue__building-img" decoding="async" height="482" src="assets/arrows/building adjust.webp" width="272"/>
 <!-- ═══ LEFT SIDE OVERLAYS ═══ -->
 <!-- Left Row 1: Penthouses -->
 <div class="cat-row cat-row--left" data-target="penthouses" style="right: calc(100% + 44px); top: 34.23%;">
 <div class="cat-row__text">Signature Residences<br/>Elevated Living<br/>Skyline Views</div>
 <button class="cat-row__btn">Penthouses</button>
 <div aria-hidden="true" class="cat-row__icon">
-<img alt="Penthouses" decoding="async" height="54" loading="lazy" src="assets/Logo/the penthouse.webp" width="50">
+<img alt="Penthouses" decoding="async" height="54" src="assets/Logo/the penthouse.webp" width="50">
 </img></div>
 </div>
 <!-- Left Row 2: The Leisure -->
@@ -696,7 +789,7 @@
 <div class="cat-row__text">Members Lounge<br/>Game Zone<br/>Kids Play Area</div>
 <button class="cat-row__btn">The Leisure</button>
 <div aria-hidden="true" class="cat-row__icon">
-<img alt="The Leisure" decoding="async" height="172" loading="lazy" src="assets/Logo/the leasure.webp" width="272"/>
+<img alt="The Leisure" decoding="async" height="172" src="assets/Logo/the leasure.webp" width="272"/>
 </div>
 </div>
 <!-- Left Row 3: The Social -->
@@ -704,14 +797,14 @@
 <div class="cat-row__text">Swimming Pool<br/>Resto-Bar<br/>Banquet Hall</div>
 <button class="cat-row__btn">The Social</button>
 <div aria-hidden="true" class="cat-row__icon">
-<img alt="The Social" decoding="async" height="43" loading="lazy" src="assets/Logo/the social.webp" width="62"/>
+<img alt="The Social" decoding="async" height="43" src="assets/Logo/the social.webp" width="62"/>
 </div>
 </div>
 <!-- ═══ RIGHT SIDE OVERLAYS ═══ -->
 <!-- Right Row 1: The Sky -->
 <div class="cat-row cat-row--right" data-target="sky" style="left: calc(100% + 29px); top: 34.44%;">
 <div aria-hidden="true" class="cat-row__icon">
-<img alt="The Sky" decoding="async" height="52" loading="lazy" src="assets/Logo/the sky.webp" width="62"/>
+<img alt="The Sky" decoding="async" height="52" src="assets/Logo/the sky.webp" width="62"/>
 </div>
 <button class="cat-row__btn">The Sky</button>
 <div class="cat-row__text">Pickleball<br/>Padel<br/>Badminton<br/>Glass Box</div>
@@ -719,7 +812,7 @@
 <!-- Right Row 2: The Wellness -->
 <div class="cat-row cat-row--right" data-target="wellness" style="left: calc(100% + 29px); top: 59.75%;">
 <div aria-hidden="true" class="cat-row__icon">
-<img alt="The Wellness" decoding="async" height="54" loading="lazy" src="assets/Logo/the wellness.webp" width="60"/>
+<img alt="The Wellness" decoding="async" height="54" src="assets/Logo/the wellness.webp" width="60"/>
 </div>
 <button class="cat-row__btn">The Wellness</button>
 <div class="cat-row__text">Gymnasium<br/>Yoga Room<br/>Steam Room &amp; Sauna<br/>Salon</div>
@@ -727,7 +820,7 @@
 <!-- Right Row 3: The Ground -->
 <div class="cat-row cat-row--right" data-target="ground" style="left: calc(100% + 29px); top: 76.14%;">
 <div aria-hidden="true" class="cat-row__icon">
-<img alt="The Ground" decoding="async" height="54" loading="lazy" src="assets/Logo/the ground.webp" width="64"/>
+<img alt="The Ground" decoding="async" height="54" src="assets/Logo/the ground.webp" width="64"/>
 </div>
 <button class="cat-row__btn">The Ground</button>
 <div class="cat-row__text">Entrance Lobby<br/>Landscaped Retreat<br/>Arrival Court</div>
@@ -745,7 +838,7 @@
 <!-- Desktop map: matches the reference two-column structure. -->
 <div class="gravity__map-wrap gravity__map-wrap--desktop reveal">
 <a class="gravity__map-click-target" href="https://maps.app.goo.gl/MC2fYbBXdkjCLCPYA" rel="noopener noreferrer" target="_blank">
-<img alt="Map showing The Crimson Borivali location" class="gravity__map-image" decoding="async" height="2040" loading="lazy" onerror="this.onerror=null;this.src='assets/images/map.webp';" src="assets/map/map.webp" width="2920"/>
+<img alt="Map showing The Crimson Borivali location" class="gravity__map-image" decoding="async" height="2040" onerror="this.onerror=null;this.src='assets/images/map.webp';" src="assets/map/map.webp" width="2920"/>
 <span class="gravity__map-link">Click to view on Google Map</span>
 </a>
 </div>
@@ -757,7 +850,7 @@
 </h2>
 <!-- Left aligned gold line divider with diamond on left -->
 <div aria-hidden="true" class="gravity__divider">
-<img alt="" class="gravity__divider-img" decoding="async" height="29" loading="lazy" src="assets/arrows/under center.webp" width="630"/>
+<img alt="" class="gravity__divider-img" decoding="async" height="29" src="assets/arrows/under center.webp" width="630"/>
 </div>
 <div class="gravity__divider_mobile">
 <svg fill="none" height="22" viewbox="0 0 283 22" width="283" xmlns="http://www.w3.org/2000/svg">
@@ -782,7 +875,7 @@
 <!-- Mobile map image -->
 <div class="gravity__map-wrap gravity__map-wrap--mobile reveal">
 <a class="gravity__map-click-target" href="https://maps.app.goo.gl/MC2fYbBXdkjCLCPYA" rel="noopener noreferrer" target="_blank">
-<img alt="Map showing The Crimson Borivali location" class="gravity__map-image" decoding="async" height="2040" loading="lazy" onerror="this.onerror=null;this.src='assets/images/map.webp';" src="assets/map/map.webp" width="2920"/>
+<img alt="Map showing The Crimson Borivali location" class="gravity__map-image" decoding="async" height="2040" onerror="this.onerror=null;this.src='assets/images/map.webp';" src="assets/map/map.webp" width="2920"/>
 <span class="gravity__map-link">Click to view on Google Map</span>
 </a>
 </div>
@@ -800,7 +893,7 @@
 <span class="gravity__acc-title">Seamless Connectivity</span>
 </div>
 </div>
-<img alt="" class="gravity__acc-under-img" decoding="async" height="31" loading="lazy" src="assets/arrows/under seam.webp" width="585"/>
+<img alt="" class="gravity__acc-under-img" decoding="async" height="31" src="assets/arrows/under seam.webp" width="585"/>
 </button>
 <div class="gravity__acc-panel">
 <div class="gravity__acc-content">
@@ -818,11 +911,11 @@
 <div class="gravity__acc-trigger-top">
 <div class="gravity__acc-title-group">
 <!-- Education / Health Logo -->
-<img alt="Education &amp; Healthcare" class="gravity__acc-icon" decoding="async" height="30" loading="lazy" src="assets/Logo/education.webp" width="30"/>
+<img alt="Education &amp; Healthcare" class="gravity__acc-icon" decoding="async" height="30" src="assets/Logo/education.webp" width="30"/>
 <span class="gravity__acc-title">Education &amp; Healthcare</span>
 </div>
 </div>
-<img alt="" class="gravity__acc-under-img" decoding="async" height="31" loading="lazy" src="assets/arrows/under seam.webp" width="585"/>
+<img alt="" class="gravity__acc-under-img" decoding="async" height="31" src="assets/arrows/under seam.webp" width="585"/>
 </button>
 <div class="gravity__acc-panel">
 <div class="gravity__acc-content">
@@ -840,11 +933,11 @@
 <div class="gravity__acc-trigger-top">
 <div class="gravity__acc-title-group">
 <!-- Retail / Shop Logo -->
-<img alt="Retail &amp; Entertainment" class="gravity__acc-icon" decoding="async" height="40" loading="lazy" src="assets/Logo/retail and enter (1).webp" width="43"/>
+<img alt="Retail &amp; Entertainment" class="gravity__acc-icon" decoding="async" height="40" src="assets/Logo/retail and enter (1).webp" width="43"/>
 <span class="gravity__acc-title">Retail &amp; Entertainment</span>
 </div>
 </div>
-<img alt="" class="gravity__acc-under-img" decoding="async" height="31" loading="lazy" src="assets/arrows/under seam.webp" width="585"/>
+<img alt="" class="gravity__acc-under-img" decoding="async" height="31" src="assets/arrows/under seam.webp" width="585"/>
 </button>
 <div class="gravity__acc-panel">
 <div class="gravity__acc-content">
@@ -899,31 +992,31 @@
 <div class="gallery__slider" id="interiorSlider">
 <!-- Slide 0: Lounge -->
 <div class="gallery__slide" data-index="0">
-<img alt="Cigar Lounge leisure zone" decoding="async" height="2955" loading="lazy" src="assets/images/11th floor- Cigar Lounge.webp" width="3250"/>
+<img alt="Cigar Lounge leisure zone" decoding="async" height="2955" src="assets/images/11th floor- Cigar Lounge.webp" width="3250"/>
 </div>
 <!-- Slide 1: Resto Bar -->
 <div class="gallery__slide" data-index="1">
-<img alt="Resto Bar area" decoding="async" height="1950" loading="lazy" src="assets/images/10th floor- Resto Bar.webp" width="3250"/>
+<img alt="Resto Bar area" decoding="async" height="1950" src="assets/images/10th floor- Resto Bar.webp" width="3250"/>
 </div>
 <!-- Slide 2: Entrance Lobby 1 -->
 <div class="gallery__slide is-active" data-index="2">
-<img alt="Exclusive duplex penthouse entrance lobby" decoding="async" height="2519" loading="lazy" src="assets/images/10th Floor Entrance Lobby Area 01.webp" width="3000"/>
+<img alt="Exclusive duplex penthouse entrance lobby" decoding="async" height="2519" src="assets/images/10th Floor Entrance Lobby Area 01.webp" width="3000"/>
 </div>
 <!-- Slide 3: Entrance Lobby 2 -->
 <div class="gallery__slide" data-index="3">
-<img alt="Secondary entrance lobby" decoding="async" height="2519" loading="lazy" src="assets/images/10th Floor Entrance Lobby Area 02.webp" width="3000"/>
+<img alt="Secondary entrance lobby" decoding="async" height="2519" src="assets/images/10th Floor Entrance Lobby Area 02.webp" width="3000"/>
 </div>
 <!-- Slide 4: Banquet -->
 <div class="gallery__slide" data-index="4">
-<img alt="Banquet hall area" decoding="async" height="1829" loading="lazy" src="assets/images/10th Floor- banquet.webp" width="3250"/>
+<img alt="Banquet hall area" decoding="async" height="1829" src="assets/images/10th Floor- banquet.webp" width="3250"/>
 </div>
 <!-- Slide 5: Kids Play -->
 <div class="gallery__slide" data-index="5">
-<img alt="Kids play zone" decoding="async" height="2813" loading="lazy" src="assets/images/10th floor- Kids play area.webp" width="5000"/>
+<img alt="Kids play zone" decoding="async" height="2813" src="assets/images/10th floor- Kids play area.webp" width="5000"/>
 </div>
 <!-- Slide 6: Social -->
 <div class="gallery__slide" data-index="6">
-<img alt="Resto bar and social gathering zone" decoding="async" height="537" loading="lazy" src="assets/images/the social.webp" width="980"/>
+<img alt="Resto bar and social gathering zone" decoding="async" height="537" src="assets/images/the social.webp" width="980"/>
 </div>
 </div><!-- /.gallery__slider -->
 </div><!-- /.gallery__slider-container -->
@@ -945,35 +1038,35 @@
 <div class="gallery__slider" id="exteriorSlider">
 <!-- Slide 0: Front Gate -->
 <div class="gallery__slide" data-index="0">
-<img alt="Front gate entrance at The Crimson" decoding="async" height="537" loading="lazy" src="assets/exterior/Font Gate.webp" width="980"/>
+<img alt="Front gate entrance at The Crimson" decoding="async" height="537" src="assets/exterior/Font Gate.webp" width="980"/>
 </div>
 <!-- Slide 1: Front Entry -->
 <div class="gallery__slide" data-index="1">
-<img alt="Front entry pathway of The Crimson building" decoding="async" height="537" loading="lazy" src="assets/exterior/Front Entry.webp" width="980"/>
+<img alt="Front entry pathway of The Crimson building" decoding="async" height="537" src="assets/exterior/Front Entry.webp" width="980"/>
 </div>
 <!-- Slide 2: Front View -->
 <div class="gallery__slide" data-index="2">
-<img alt="Front view architectural elevation" decoding="async" height="537" loading="lazy" src="assets/exterior/Front view.webp" width="980"/>
+<img alt="Front view architectural elevation" decoding="async" height="537" src="assets/exterior/Front view.webp" width="980"/>
 </div>
 <!-- Slide 3: Full Building -->
 <div class="gallery__slide is-active" data-index="3">
-<img alt="Full building view of The Crimson luxury residence" decoding="async" height="537" loading="lazy" src="assets/exterior/Full Building.webp" width="980"/>
+<img alt="Full building view of The Crimson luxury residence" decoding="async" height="537" src="assets/exterior/Full Building.webp" width="980"/>
 </div>
 <!-- Slide 4: In Cloud -->
 <div class="gallery__slide" data-index="4">
-<img alt="Skyline rendering of The Crimson in the clouds" decoding="async" height="537" loading="lazy" src="assets/exterior/In Cloud.webp" width="980"/>
+<img alt="Skyline rendering of The Crimson in the clouds" decoding="async" height="537" src="assets/exterior/In Cloud.webp" width="980"/>
 </div>
 <!-- Slide 5: Outside Building -->
 <div class="gallery__slide" data-index="5">
-<img alt="Exterior facade showing architectural design details" decoding="async" height="537" loading="lazy" src="assets/exterior/Outside Building.webp" width="980"/>
+<img alt="Exterior facade showing architectural design details" decoding="async" height="537" src="assets/exterior/Outside Building.webp" width="980"/>
 </div>
 <!-- Slide 6: Swimming Pool -->
 <div class="gallery__slide" data-index="6">
-<img alt="Swimming pool luxury deck amenity" decoding="async" height="537" loading="lazy" src="assets/exterior/Swimming Pool.webp" width="980"/>
+<img alt="Swimming pool luxury deck amenity" decoding="async" height="537" src="assets/exterior/Swimming Pool.webp" width="980"/>
 </div>
 <!-- Slide 7: Terrace -->
 <div class="gallery__slide" data-index="7">
-<img alt="Sky terrace relaxation area" decoding="async" height="537" loading="lazy" src="assets/exterior/terrece..webp" width="980"/>
+<img alt="Sky terrace relaxation area" decoding="async" height="537" src="assets/exterior/terrece..webp" width="980"/>
 </div>
 </div><!-- /.gallery__slider -->
 </div><!-- /.gallery__slider-container -->
@@ -1036,7 +1129,7 @@
 </div>
 <!-- Right Column: Image -->
 <div class="presentation__image-wrap reveal delay-1">
-<img alt="Hafeez Contractor Architect vision" class="presentation__img" decoding="async" height="488" loading="lazy" src="assets/images/HC Pic 1.webp" width="908"/>
+<img alt="Hafeez Contractor Architect vision" class="presentation__img" decoding="async" height="488" src="assets/images/HC Pic 1.webp" width="908"/>
 </div>
 </div><!-- /.presentation__container -->
 </section><!-- /#architect -->
@@ -1135,7 +1228,7 @@
 <!-- Slide 1 -->
 <div aria-label="Play Story 1: Launch Film" class="stories__slide" data-video-id="3V8xB4_BydQ">
 <div class="stories__slide-image-container">
-<img alt="Story 1 launch film thumbnail" class="stories__slide-img" decoding="async" height="720" loading="lazy" src="assets/Renders/Thumbnail 1.webp" width="1280"/>
+<img alt="Story 1 launch film thumbnail" class="stories__slide-img" decoding="async" height="720" src="assets/Renders/Thumbnail 1.webp" width="1280"/>
 <div aria-hidden="true" class="stories__play-btn">
 <svg class="stories__play-icon" viewbox="0 0 24 24">
 <path d="M8 5v14l11-7z" fill="currentColor"></path>
@@ -1146,7 +1239,7 @@
 <!-- Slide 2 -->
 <div aria-label="Play Story 2: Architectural Showcase" class="stories__slide" data-video-id="kHSsESyLdGo">
 <div class="stories__slide-image-container">
-<img alt="Story 2 architectural showcase thumbnail" class="stories__slide-img" decoding="async" height="720" loading="lazy" src="assets/Renders/Thumbnail 2.webp" width="1280"/>
+<img alt="Story 2 architectural showcase thumbnail" class="stories__slide-img" decoding="async" height="720" src="assets/Renders/Thumbnail 2.webp" width="1280"/>
 <div aria-hidden="true" class="stories__play-btn">
 <svg class="stories__play-icon" viewbox="0 0 24 24">
 <path d="M8 5v14l11-7z" fill="currentColor"></path>
@@ -1157,7 +1250,7 @@
 <!-- Slide 3 -->
 <div aria-label="Play Story 3: Curated Brand Stories" class="stories__slide" data-video-id="cuCPyqTf54Q">
 <div class="stories__slide-image-container">
-<img alt="Story 3 curated brand stories thumbnail" class="stories__slide-img" decoding="async" height="720" loading="lazy" src="assets/Renders/Thumbnail 3.webp" width="1280"/>
+<img alt="Story 3 curated brand stories thumbnail" class="stories__slide-img" decoding="async" height="720" src="assets/Renders/Thumbnail 3.webp" width="1280"/>
 <div aria-hidden="true" class="stories__play-btn">
 <svg class="stories__play-icon" viewbox="0 0 24 24">
 <path d="M8 5v14l11-7z" fill="currentColor"></path>
@@ -1387,7 +1480,7 @@
 <div class="footer__container">
 <!-- Brand Info (Left Column) -->
 <div class="footer__brand">
-<img alt="The Crimson Borivali Logo" class="footer__logo-img" decoding="async" height="252" loading="lazy" src="assets/Logo/crimson-logo-clear.webp" width="442"/>
+<img alt="The Crimson Borivali Logo" class="footer__logo-img" decoding="async" height="252" src="assets/Logo/crimson-logo-clear.webp" width="442"/>
 <!-- Social Icons -->
 <div class="footer__socials">
 <a aria-label="Instagram" class="footer__social-link" href="https://www.instagram.com/imbuildcon/" rel="noopener noreferrer" target="_blank">
@@ -1409,7 +1502,7 @@
 <div class="footer__info-grid">
 <!-- MahaRERA Details -->
 <div class="footer__rera-box">
-<img alt="MahaRERA Registration PR1180002502101" class="footer__rera-qr" decoding="async" height="77" loading="lazy" src="assets/arrows/qr abhi.webp" width="83"/>
+<img alt="MahaRERA Registration PR1180002502101" class="footer__rera-qr" decoding="async" height="77" src="assets/arrows/qr abhi.webp" width="83"/>
 <div class="footer__rera-text">
 <span class="footer__rera-label">MahaRERA Number :</span>
 <span class="footer__rera-number">PR1180002502101</span>

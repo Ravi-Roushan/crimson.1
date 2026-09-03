@@ -84,36 +84,25 @@
   }
 
 
-  /* Lazy-load non-hero background videos near the viewport. */
-  const lazyBackgroundVideos = document.querySelectorAll(
+  /* Eager-load background videos: no lazy loading. */
+  const backgroundVideos = document.querySelectorAll(
     '.rare-presence__video, .rare-presence__video_mobile, ' +
     '.art-deco-section__video, .art-deco-section__video_mobile'
   );
-
-  function hydrateBackgroundVideo(video) {
+  backgroundVideos.forEach(function(video){
     const sources = video.querySelectorAll('source[data-src]');
-    sources.forEach(function (source) {
+    sources.forEach(function(source){
       if (!source.getAttribute('src')) source.setAttribute('src', source.getAttribute('data-src'));
+      source.removeAttribute('data-src');
     });
-    if (sources.length) video.load();
+    video.preload = 'auto';
     video.defaultMuted = true;
     video.muted = true;
     video.playsInline = true;
+    video.load();
     const playback = video.play();
-    if (playback && typeof playback.catch === 'function') playback.catch(function () {});
-  }
-
-  if (lazyBackgroundVideos.length && 'IntersectionObserver' in window) {
-    const lazyVideoObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting && getComputedStyle(entry.target).display !== 'none') {
-          hydrateBackgroundVideo(entry.target);
-          lazyVideoObserver.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: '500px 0px' });
-    lazyBackgroundVideos.forEach(function (video) { lazyVideoObserver.observe(video); });
-  }
+    if (playback && typeof playback.catch === 'function') playback.catch(function(){});
+  });
 
   /* ── Navbar: darken on scroll ── */
   function handleScroll() {
