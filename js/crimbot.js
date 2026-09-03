@@ -46,7 +46,7 @@
   function placeLauncher(){
     var mobile=window.innerWidth<=768;
     var s=size();
-    var bottom=mobile ? 0 : 52;
+    var bottom=mobile ? -42 : 52;
     var right=mobile ? 19 : 39;
     launcher.style.setProperty('position','fixed','important');
     launcher.style.setProperty('width',s+'px','important');

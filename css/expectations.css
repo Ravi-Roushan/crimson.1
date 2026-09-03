@@ -140,7 +140,8 @@
       ),
       url('../assets/banners/mobile_expectations.png') !important;
     background-position: center top, center bottom !important;
-    background-size: 100% 100%, cover !important;
+    /* Keep the supplied mobile artwork at its natural aspect ratio so the building does not stretch/crop. */
+    background-size: 100% 100%, 100% auto !important;
     background-repeat: no-repeat !important;
   }
 
@@ -194,6 +195,6 @@
 .art-deco-section__content{left:auto !important;right:auto !important;margin-left:auto !important;margin-right:auto !important;opacity:1 !important;transform:none !important;}
 .art-deco-section__video-wrap{display:block !important;visibility:visible !important;opacity:1 !important;}
 .art-deco-section__video_mobile{display:block !important;visibility:visible !important;opacity:1 !important;}
-.expectations-section{display:block !important;visibility:visible !important;opacity:1 !important;background-image:linear-gradient(to bottom,#FFF0D3 0%,#FFF0D3 33%,rgba(255,240,211,0) 42%),url('../assets/banners/mobile_expectations.png') !important;background-position:center top,center bottom !important;background-size:100% 100%,cover !important;background-repeat:no-repeat !important;}
+.expectations-section{display:block !important;visibility:visible !important;opacity:1 !important;background-image:linear-gradient(to bottom,#FFF0D3 0%,#FFF0D3 33%,rgba(255,240,211,0) 42%),url('../assets/banners/mobile_expectations.png') !important;background-position:center top,center bottom !important;background-size:100% 100%,100% auto !important;background-repeat:no-repeat !important;}
 .expectations-section__content{position:relative !important;left:auto !important;right:auto !important;margin-left:auto !important;margin-right:auto !important;opacity:1 !important;transform:none !important;visibility:visible !important;}
 }
