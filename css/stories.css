@@ -1,0 +1,367 @@
+/* ============================================================
+   STORIES IN MOTION SECTION
+   ============================================================ */
+
+.stories-section {
+  background-color: #FFF0D3; /* Matches .presentation-section */
+  background-image: url('../assets/banners/Rectangle 37_cream_blend.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #4A0707;
+  width: 100%;
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.stories__container {
+  max-width: 1440px; /* Matches .presentation__container */
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
+.stories__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px; /* Spacing between text and carousel */
+}
+
+.stories__heading {
+  font-family: 'ClassyVogue', 'Cormorant Garamond', 'Georgia', serif !important;
+  font-size: clamp(2rem, 3.2vw, 2.6rem); /* Matches .presentation__heading size */
+  font-weight: 500;
+  color: #670204; /* Matches heading text color */
+  margin: 0 0 16px 0; /* Spacing between heading and desc */
+  line-height: 1.2;
+}
+
+.stories__desc {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: clamp(0.78rem, 1.15vw, 0.85rem); /* Matches .presentation__desc size */
+  font-weight: 400;
+  line-height: 1.6;
+  color: #5A0406; /* Matches paragraph text color */
+  margin: 0 auto;
+  max-width: 850px; /* Matches .presentation__desc max-width */
+}
+
+.stories__mobile-break,
+.stories__copy-mobile {
+  display: none;
+}
+
+/* ── Carousel Wrapper ── */
+.stories__carousel-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 1080px; /* Increased from 908px to expand the thumbnail image holder */
+  aspect-ratio: 908 / 488; /* Locked aspect ratio matching architect rendering */
+  box-shadow: 0 15px 45px rgba(74, 7, 7, 0.08); /* Premium shadow */
+  border: 1px solid rgba(74, 7, 7, 0.05); /* Soft border */
+  border-radius: 20px; /* Rounded corners */
+  overflow: visible; /* Show controls outside */
+  background-color: #FFF8F0;
+}
+
+.stories__carousel-viewport {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px; /* Clip children to corners */
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.stories__carousel-viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.stories__carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.stories__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  display: block;
+}
+
+.stories__slide-image-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.stories__slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+.stories__slide:hover .stories__slide-img {
+  transform: scale(1.03); /* Matching architect hover zoom */
+}
+
+/* Inline video iframe player styling */
+.stories__video-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000; /* Prevent flicker during initial YouTube player load */
+}
+
+/* Premium video play icon overlay */
+.stories__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(55px, 6vw, 75px);
+  height: clamp(55px, 6vw, 75px);
+  background-color: rgba(103, 2, 4, 0.9); /* Translucent burgundy (#670204) */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF0D3; /* Champagne play icon */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none; /* Let click event pass through to slide */
+  z-index: 2;
+}
+
+.stories__slide:hover .stories__play-btn {
+  background-color: #670204;
+  color: #FFFFFF;
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 12px 35px rgba(103, 2, 4, 0.4);
+}
+
+.stories__play-icon {
+  width: 30%;
+  height: 30%;
+  margin-left: 6%; /* Visual offset centering */
+}
+
+
+/* ── Navigation Buttons ── */
+.stories__nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 64px; /* Increased size to match larger chevron scale */
+  height: 64px; /* Increased size to match larger chevron scale */
+  background: none; /* No background */
+  border: none;
+  box-shadow: none;
+  color: #98989a; /* Slate gray arrow color matching the reference crop */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+  cursor: pointer;
+}
+
+.stories__nav-btn:hover {
+  color: #670204; /* Matches heading text color on hover */
+  transform: translateY(-50%) scale(1.1); /* Elegant scale zoom on hover */
+}
+
+.stories__nav-btn--prev {
+  left: -104px; /* Positioned outside image container with a 40px gap (64px button + 40px gap) */
+}
+
+.stories__nav-btn--next {
+  right: -104px; /* Positioned outside image container with a 40px gap (64px button + 40px gap) */
+}
+
+.stories__nav-arrow {
+  width: 44px; /* Increased chevron SVG size by 20px (from 24px to 44px) */
+  height: 44px; /* Increased chevron SVG size by 20px (from 24px to 44px) */
+  display: block;
+}
+
+/* ── Responsive Overrides ── */
+@media (max-width: 1350px) {
+  /* Scale down max-width slightly on intermediate viewports to preserve space for outside arrows */
+  .stories__carousel-wrap {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 1150px) {
+  /* Prevent navigation buttons from overflowing on narrower desktop screens */
+  .stories__carousel-wrap {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 992px) {
+  .stories-section {
+    padding: 80px 0;
+  }
+  
+  .stories__carousel-wrap {
+    width: calc(100% - 210px); /* Leave 105px room on left and right for buttons */
+    max-width: 100%;
+    margin: 0 auto;
+    height: auto;
+    aspect-ratio: 908 / 488;
+  }
+  
+  .stories__nav-btn {
+    width: 54px;
+    height: 54px;
+  }
+  
+  .stories__nav-arrow {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .stories__nav-btn--prev {
+    left: -84px; /* 54px button + 30px gap on tablet */
+  }
+  
+  .stories__nav-btn--next {
+    right: -84px; /* 54px button + 30px gap on tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .stories-section {
+    padding: 60px 0;
+    min-height: 60vh;
+  }
+  
+  .stories__carousel-wrap {
+    width: calc(100% - 150px); /* Leave 75px room on left and right for buttons */
+    aspect-ratio: 16 / 9;
+  }
+  
+  .stories__nav-btn {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .stories__nav-arrow {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .stories__nav-btn--prev {
+    left: -78px; /* 44px button + 20px gap on mobile */
+  }
+  
+  .stories__nav-btn--next {
+    right: -80px; /* 44px button + 20px gap on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .stories-section {
+    height: 582px !important;
+    min-height: 582px !important;
+    padding: 72px 0 78px !important;
+  }
+  .stories__container {
+    max-width: 1440px; /* Matches .presentation__container */
+    margin: 0 auto;
+    padding: 0 22px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .stories__carousel-viewport {
+    position: relative !important;
+    left: auto !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    border-radius: 18px !important;
+  }
+  .stories__content {
+    margin-bottom: 52px !important;
+  }
+  .stories__heading {
+    font-family: 'ClassyVogue', 'Cormorant Garamond', 'Georgia', serif !important;
+    max-width: 270px !important;
+    margin: 0 auto 34px !important;
+    padding: 0 !important;
+    font-size: 37px !important;
+    font-weight: 400 !important;
+    line-height: 1.02 !important;
+    color: #670204; /* Matches heading text color */
+    text-transform: uppercase !important;
+  }
+  .stories__mobile-break,
+  .stories__copy-mobile {
+    display: inline !important;
+  }
+  .stories__copy-desktop {
+    display: none !important;
+  }
+  .stories__desc {
+    max-width: 335px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 9px !important;
+    font-weight: 400 !important;
+    line-height: 1.55 !important;
+  }
+  .stories__carousel-wrap {
+    width: calc(100% - 56px) !important;
+    max-width: 330px !important;
+    border: 0 !important;
+    border-radius: 18px !important;
+    box-shadow: none !important;
+  }
+  .stories__slide-image-container,
+  .stories__video-iframe {
+    border-radius: 18px !important;
+  }
+  .stories__play-btn {
+    display: flex !important;
+  }
+  .stories__nav-btn {
+    width: 24px !important;
+    height: 38px !important;
+  }
+  .stories__nav-arrow {
+    width: 15px !important;
+    height: 24px !important;
+  }
+  .stories__nav-btn--prev { left: -39px !important; }
+  .stories__nav-btn--next { right: -39px !important; }
+}

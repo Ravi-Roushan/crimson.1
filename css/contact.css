@@ -1,0 +1,498 @@
+/* ============================================================
+   PRIVATE PREVIEW ACCESS — CONTACT SECTION
+   ============================================================ */
+
+.contact-section {
+  position: relative;
+  width: 100%;
+  min-height: auto; /* Shorter window height to let surrounding sections peek */
+  padding: 60px 0; /* Reduced top/bottom padding */
+  display: flex;
+  align-items: center;
+  /* Premium dark charcoal gray overlay */
+  background-image:
+    linear-gradient(
+      rgba(36, 36, 38, 0.82),
+      rgba(18, 18, 20, 0.88)
+    ),
+    url('../assets/images/Terrace - opt 1.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* Support smooth scrolling on mobile */
+  overflow: hidden;
+}
+
+.contact__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Info / Form card layout */
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Left Column: Info ── */
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.contact__title {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 500;
+  color: var(--color-gold); /* Warm gold/cream */
+  margin: 0 0 24px 0;
+  line-height: 1.1;
+  text-transform: capitalize;
+}
+
+/* Gold divider line with diamond in middle */
+.contact__divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 28px;
+}
+
+.contact__divider-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: rgba(196, 158, 80, 0.3);
+}
+
+.contact__divider-diamond {
+  color: var(--color-gold);
+  font-size: 0.6rem;
+  line-height: 1;
+  margin-left: -1px;
+}
+
+.contact__subtitle {
+  font-size: clamp(0.95rem, 1.8vw, 1.35rem);
+  font-weight: 500;
+  color: var(--color-gold);
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.contact__mobile-break,
+.contact__subtitle-mobile {
+  display: none;
+}
+
+/* ── Right Column: Dark Translucent Glassmorphic Form Card ── */
+.contact__form-card {
+  background: rgba(13, 3, 5, 0.78); /* Very dark, translucent background matching screenshot theme */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(196, 158, 80, 0.2); /* Subtle golden-tinged border */
+  border-radius: 4px;
+  padding: 44px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  width: 100%;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Multiple choice checkbox grid */
+.contact__checkbox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 28px;
+  margin-bottom: 32px;
+}
+
+.contact__checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Hide native checkbox input */
+.contact__checkbox-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Custom checkbox box */
+.contact__checkbox-custom {
+  height: 15px;
+  width: 15px;
+  border: 1px solid rgba(196, 158, 80, 0.5);
+  background-color: transparent;
+  flex-shrink: 0;
+  position: relative;
+  transition: all 0.3s var(--ease-out);
+}
+
+.contact__checkbox-label:hover .contact__checkbox-custom {
+  border-color: var(--color-gold-light);
+  box-shadow: 0 0 8px rgba(196, 158, 80, 0.3);
+}
+
+/* Checked styling */
+.contact__checkbox-input:checked ~ .contact__checkbox-custom {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+/* Inner tick mark */
+.contact__checkbox-custom::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 4.5px;
+  top: 1.5px;
+  width: 4px;
+  height: 8px;
+  border: solid #4A0707;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.contact__checkbox-input:checked ~ .contact__checkbox-custom::after {
+  display: block;
+}
+
+.contact__checkbox-text {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-gold); /* Rich gold text to match screenshot */
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.contact__checkbox-label:hover .contact__checkbox-text {
+  color: var(--color-gold-light); /* Subtle glow on hover */
+}
+
+/* Input Fields */
+.contact__input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.contact__input-wrap {
+  width: 100%;
+}
+
+.contact__input {
+  width: 100%;
+  padding: 13px 18px;
+  background: rgba(80, 68, 58, 0.45); /* Semi-translucent warm dark-bronze/brown matching screenshot */
+  border: 1px solid rgba(196, 158, 80, 0.3); /* Thin gold-tinted border */
+  color: #F2E3D3; /* Warm off-white text */
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.contact__input::placeholder {
+  color: rgba(242, 227, 211, 0.55); /* Muted off-white/cream placeholder */
+}
+
+.contact__input:focus {
+  outline: none;
+  border-color: var(--color-gold); /* Gold border on focus */
+  background: rgba(80, 68, 58, 0.55);
+  box-shadow: 0 0 12px rgba(196, 158, 80, 0.15);
+}
+
+.contact__input-full {
+  margin-bottom: 32px;
+}
+
+/* Submit Button */
+.contact__submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 147px;
+  height: 31px;
+  margin: 0 auto 20px;
+  padding: 0;
+  background: linear-gradient(105deg, #EAD7B5 0%, #DCB981 54%, #C58D4C 100%);
+  color: #670204;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.22);
+  transition: filter 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact__submit-btn:hover {
+  filter: brightness(1.07);
+  transform: translateY(-1px);
+  box-shadow: 0 7px 16px rgba(0, 0, 0, 0.28);
+}
+
+.contact__submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Form Tagline footer */
+.contact__tagline {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(201, 169, 110, 0.8); /* Warm gold-cream tagline matching screenshot */
+  letter-spacing: 0.05em;
+  text-align: center;
+  line-height: 1.6;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   RESPONSIVE OVERRIDES
+   ============================================================ */
+
+@media (max-width: 992px) {
+  .contact-section {
+    padding: 40px 0;
+  }
+
+  .contact__container {
+    grid-template-columns: 1fr; /* Stack layout on smaller screens */
+    gap: 48px;
+  }
+
+  .contact__info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact__divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact__form-card {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 30px 0;
+  }
+
+  .contact__checkbox-grid {
+    grid-template-columns: 1fr; /* Single column checks on tablet/mobile */
+    gap: 14px;
+  }
+
+  .contact__input-row {
+    grid-template-columns: 1fr; /* Stack input fields */
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    height: 868px !important;
+    min-height: 868px !important;
+    padding: 72px 0 !important;
+    align-items: flex-start !important;
+    background-image:
+      linear-gradient(rgba(13, 3, 5, 0.64), rgba(13, 3, 5, 0.72)),
+      url('../assets/images/Terrace - opt 1.webp') !important;
+    background-position: center top !important;
+  }
+  .contact__container {
+    gap: 66px !important;
+    padding: 0 37px !important;
+  }
+  .contact__mobile-break,
+  .contact__subtitle-mobile {
+    display: inline !important;
+  }
+  .contact__subtitle-desktop {
+    display: none !important;
+  }
+  .contact__title {
+    max-width: 350px !important;
+    margin: 0 auto 24px !important;
+    font-family: 'ClassyVogue', 'Cormorant Garamond', 'Georgia', serif !important;
+    font-size: 37px !important;
+    font-weight: 400 !important;
+    line-height: 1.03 !important;
+    text-align: center !important;
+  }
+  .contact__divider {
+    max-width: 180px !important;
+    margin-bottom: 28px !important;
+  }
+  .contact__subtitle {
+    max-width: 270px !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+  }
+  .contact__form-card {
+    padding: 42px 28px 34px !important;
+    background: rgba(5, 4, 4, 0.78) !important;
+    border: 0 !important;
+    border-radius: 14px !important;
+  }
+  .contact__checkbox-grid {
+    grid-template-columns: 1fr !important;
+    gap: 9px !important;
+    margin-bottom: 28px !important;
+  }
+  .contact__checkbox-label:nth-child(1) { order: 1; }
+  .contact__checkbox-label:nth-child(3) { order: 2; }
+  .contact__checkbox-label:nth-child(5) { order: 3; }
+  .contact__checkbox-label:nth-child(2) { order: 4; }
+  .contact__checkbox-label:nth-child(4) { order: 5; }
+  .contact__checkbox-label:nth-child(6) { order: 6; }
+  .contact__checkbox-label {
+    gap: 9px !important;
+  }
+  .contact__checkbox-custom {
+    width: 11px !important;
+    height: 11px !important;
+  }
+  .contact__checkbox-custom::after {
+    left: 3px !important;
+    top: 0.5px !important;
+    width: 3px !important;
+    height: 6px !important;
+    border-width: 0 1.5px 1.5px 0 !important;
+  }
+  .contact__checkbox-text {
+    font-size: 10px !important;
+  }
+  .contact__input-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 7px !important;
+    margin-bottom: 8px !important;
+  }
+  .contact__input {
+    padding: 11px 12px !important;
+    font-size: 8px !important;
+  }
+  .contact__input-full {
+    margin-bottom: 27px !important;
+  }
+  .contact__submit-btn {
+    width: 147px !important;
+    height: 31px !important;
+    margin-bottom: 22px !important;
+    padding: 0 !important;
+    font-size: 10px !important;
+  }
+  .contact__tagline {
+    font-size: 7px !important;
+    line-height: 1.45 !important;
+  }
+}
+
+/* ── Form Success Modal ── */
+.form-success-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background-color: rgba(13, 3, 5, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.form-success-overlay.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.form-success-card {
+  background: #4A0707;
+  border: 1px solid rgba(196, 158, 80, 0.3);
+  border-radius: 12px;
+  padding: 48px 40px;
+  max-width: 480px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  transform: translateY(30px) scale(0.95);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.form-success-overlay.is-active .form-success-card {
+  transform: translateY(0) scale(1);
+}
+
+.form-success-title {
+  font-family: 'ClassyVogue', 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  color: #F2E3D3;
+  line-height: 1.2;
+  margin: 0 0 16px;
+  text-transform: capitalize;
+}
+
+.form-success-name {
+  color: var(--color-gold);
+}
+
+.form-success-divider {
+  color: var(--color-gold);
+  font-size: 0.6rem;
+  margin-bottom: 24px;
+  letter-spacing: 2px;
+}
+
+.form-success-message {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(242, 227, 211, 0.8);
+  margin: 0 0 32px;
+}
+
+.form-success-btn {
+  background: transparent;
+  border: 1.5px solid var(--color-gold);
+  color: var(--color-gold);
+  padding: 10px 48px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-success-btn:hover {
+  background: var(--color-gold);
+  color: #4A0707;
+  box-shadow: 0 6px 20px rgba(196, 158, 80, 0.2);
+}
+

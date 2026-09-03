@@ -1,0 +1,301 @@
+/* ============================================================
+   SECTION 2 — A RARE PRESENCE  (video background)
+   ============================================================ */
+
+.rare-presence {
+  position: relative;
+  width: 100%;
+  height: calc(100vh + 80px); /* Increased section height by an additional 20px (80px total) */
+  min-height: calc(100vh + 80px);
+  padding-top: 80px; /* Increased top clearance to 80px total */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  margin-top: calc(-2.8vh - 4px); /* Overlap the hero enough to cover its encoded black edge */
+  z-index: 5; /* Ensure it sits on top of the hero section */
+}
+
+/* ── Video wrapper ── */
+.rare-presence__video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.rare-presence__video {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.02); /* Centered and zoomed out to show the entire building and clouds fully visible */
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  object-position: center center;
+  will-change: transform;
+  pointer-events: none;
+  user-select: none;
+}
+.rare-presence__video_mobile {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.02); /* Centered and zoomed out to show the entire building and clouds fully visible */
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  object-position: center center;
+  will-change: transform;
+  pointer-events: none;
+  user-select: none;
+}
+/* ── Overlay — extremely subtle so the building remains completely clear and visible ── */
+.rare-presence__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: transparent;
+  pointer-events: none;
+}
+
+/* ── Content — Left-aligned and occupies 40-45% of the viewport ── */
+.rare-presence__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  padding: 80px 24px;
+  max-width: 550px;
+  width: 100%;
+  margin-left: 8%;
+  gap: 0;
+}
+
+/* ── Main heading ── */
+.rare-presence__heading {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #670204;
+  margin: 0 0 8px 0;
+}
+
+/* ── Left-aligned Gold divider stretching to left screen edge ── */
+.rare-presence__divider {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: calc(8vw + 24px + 620px);
+  margin-left: calc(-8vw - 24px);
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.rare-presence__divider-line {
+  flex-grow: 1;
+  height: 1.5px;
+  background-color: #b8934a; /* Darker, richer gold */
+}
+
+.rare-presence__divider-ornament {
+  width: 40px;
+  height: 20px;
+  flex-shrink: 0;
+  display: block;
+}
+.rare-presence__divider-ornament_mobile {
+    display: none;
+  }
+
+/* ── Description text ── */
+.rare-presence__desc {
+  font-family: var(--font-nav);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  color: #670204; /* Reddish colour matching header */
+  max-width: 500px;
+  margin: 0;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 992px) {
+  .rare-presence__content {
+    max-width: 50%;
+    margin-left: 6%;
+  }
+
+  .rare-presence__divider {
+    width: calc(6vw + 24px + 620px);
+    margin-left: calc(-6vw - 24px);
+  }
+}
+
+@media (max-width: 768px) {
+  .rare-presence {
+    justify-content: flex-start;
+  }
+
+  .rare-presence__content {
+    max-width: 80%;
+    margin-left: 24px;
+    padding: 60px 0;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .rare-presence__divider {
+    width: calc(24px + 500px);
+    margin-left: -24px;
+  }
+
+  .rare-presence__heading {
+    font-size: 40px;
+  }
+
+  .rare-presence__desc {
+    font-size: 20px;
+    max-width: 100%;
+  }
+
+  .rare-presence__overlay {
+    background: transparent;
+  }
+}
+
+@media (max-width: 480px) {
+  .rare-presence {
+    display: block !important;
+    position: relative !important;
+    height: 782px !important;
+    min-height: 782px !important;
+    background-image: none !important;
+    background-color: #E0C295 !important;
+  }
+
+  .rare-presence__video-wrap {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+  }
+
+  .rare-presence__video {
+    display: none;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(1.02) !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  .rare-presence__video_mobile {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    transform: none !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  .rare-presence__content {
+    position: relative !important;
+    margin-left: 0 !important;
+    padding: 6px 0px 0 0px !important; /* Top margin shifted up by another 40px */
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 2 !important;
+  }
+
+  .rare-presence__divider {
+    width: 100% !important;
+    margin: 24px auto !important;
+    justify-content: center !important;
+  }
+
+  .rare-presence__divider-line {
+    display: none !important;
+  }
+
+  .rare-presence__heading {
+    width: 100%;
+    max-width: 302px;
+    min-height: 40px;
+    margin: 0 auto 8px !important;
+    padding: 0 !important;
+    align-self: center !important;
+    font-family: 'ClassyVogue', 'Cormorant Garamond', 'Georgia', serif !important;
+    font-size: 40px !important;
+    font-weight: 400 !important;
+    line-height: 40px !important;
+    letter-spacing: 0 !important;
+    white-space: nowrap;
+    text-align: center !important;
+    text-transform: none !important;
+    transform: translateY(-2px) !important;
+    color: #670204 !important;
+    -webkit-text-stroke: 0 transparent;
+    paint-order: normal;
+  }
+
+  .rare-presence__desc {
+    width: 253px;
+    height: 72px;
+    max-width: 253px !important;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 18px !important;
+    letter-spacing: 0.05em !important;
+    text-align: center !important;
+    color: #670204 !important;
+  }
+
+  .rare-presence__overlay {
+    display: none !important;
+  }
+
+  
+  .rare-presence__divider-ornament {
+    width: 40px;
+    height: 20px;
+    flex-shrink: 0;
+    display: none;
+  }
+  .rare-presence__divider-ornament_mobile {
+    display: block;
+  }
+}

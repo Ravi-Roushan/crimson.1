@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A Gallery Of Excellence – The Crimson</title>
+<meta content="A Gallery Of Excellence at The Crimson. Explore luxury interior and exterior spaces." name="description"/>
+<link href="assets/Logo/ChatGPT Image Jul 9, 2026, 07_39_47 PM-Photoroom.webp" rel="icon" type="image/webp"/>
+<meta content="#4A0707" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="css/site.min.css" rel="stylesheet"/>
+<style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* Prevent scrolling to keep it exact layout single-screen */
+      background-color: #4A0707;
+    }
+    body.gallery-page-body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    .gallery-page-body main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .gallery-page-body .gallery-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-image: 
+        linear-gradient(to bottom, rgba(13, 3, 5, 0.55) 0%, rgba(13, 3, 5, 0.4) 100%),
+        url('assets/images/Rectangle 59.webp');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 0;
+      min-height: auto;
+    }
+    .gallery-page-body .gallery__toggle-container {
+      margin-bottom: 0; /* Align perfectly */
+    }
+    /* Simple centered footer for dedicated gallery switch page */
+    .gallery-simple-footer {
+      background-color: #4A0707;
+      padding: 18px 24px;
+      text-align: center;
+      border-top: 1px solid rgba(242, 227, 211, 0.1);
+    }
+    .gallery-simple-footer .copyright-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 550;
+      color: rgba(242, 227, 211, 0.45);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .gallery-simple-footer .copyright-text a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery-simple-footer .copyright-text a:hover {
+      color: rgba(242, 227, 211, 0.85);
+    }
+  </style>
+<style>
+/* CrimBot AI — lightweight UI, matched to site typography/brand */
+#crimbot-launcher{position:fixed;right:22px;bottom:22px;width:48px;height:48px;border:0;border-radius:0;background:transparent;color:#c9a96e;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none;z-index:2147483000;display:grid;place-items:center;cursor:pointer;transition:transform .2s ease,filter .2s ease}
+#crimbot-launcher:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.crimbot-mark{position:relative;width:36px;height:36px;border:1px solid rgba(201,169,110,.9);border-radius:50%;display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:.02em;background:radial-gradient(circle at 35% 30%,rgba(201,169,110,.12),rgba(74,7,7,.06) 58%,transparent 100%);box-shadow:0 4px 14px rgba(0,0,0,.14)}
+.crimbot-online{position:absolute;right:-3px;top:-3px;width:9px;height:9px;border-radius:50%;background:#49d16d;border:1.5px solid #4a0707;box-shadow:0 0 0 2px rgba(73,209,109,.16);animation:crimbotBlink 1.45s infinite}
+@keyframes crimbotBlink{0%,100%{opacity:1}50%{opacity:.38}}
+#crimbot-panel{position:fixed;right:22px;bottom:88px;width:min(350px,calc(100vw - 28px));max-height:min(560px,calc(100vh - 120px));display:none;flex-direction:column;overflow:hidden;border:1px solid rgba(201,169,110,.45);border-radius:18px;background:rgba(13,3,5,.96);color:#f2e3d3;box-shadow:0 20px 55px rgba(0,0,0,.35);z-index:2147482999;font-family:'Montserrat',sans-serif}
+#crimbot-panel.is-open{display:flex}
+.crimbot-head{padding:14px 16px;border-bottom:1px solid rgba(201,169,110,.22);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.crimbot-title{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;letter-spacing:.05em;color:#c9a96e}
+.crimbot-status{font-size:9px;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:6px;color:rgba(242,227,211,.62)}
+.crimbot-status i{width:6px;height:6px;border-radius:50%;background:#49d16d;display:inline-block;animation:crimbotBlink 1.45s infinite}
+.crimbot-close{color:#c9a96e;font-size:20px;line-height:1;padding:0 2px;cursor:pointer}
+.crimbot-body{padding:14px;overflow:auto;display:flex;flex-direction:column;gap:12px}
+.crimbot-msg{font-size:12px;line-height:1.55;color:rgba(242,227,211,.86)}
+.crimbot-quick{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.crimbot-quick button{border:1px solid rgba(201,169,110,.3);border-radius:10px;padding:8px 9px;text-align:left;color:#e2cfa0;background:rgba(201,169,110,.05);font-family:'Montserrat',sans-serif;font-size:10px;cursor:pointer}
+.crimbot-quick button:hover{background:rgba(201,169,110,.11)}
+.crimbot-answer{padding:10px 11px;border-radius:11px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.06);font-size:11px;line-height:1.55;color:rgba(242,227,211,.88)}
+.crimbot-input{display:flex;gap:7px;border-top:1px solid rgba(201,169,110,.2);padding:10px}
+.crimbot-input input{min-width:0;flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(201,169,110,.24);border-radius:10px;padding:9px 10px;color:#fff;font-family:'Montserrat',sans-serif;font-size:11px;outline:none}
+.crimbot-input button{background:#4A0707;color:#c9a96e;border:1px solid rgba(201,169,110,.45);border-radius:10px;padding:0 12px;font-size:11px;font-family:'Montserrat',sans-serif}
+@media (max-width:600px){#crimbot-launcher{right:14px;bottom:14px;width:50px;height:50px}#crimbot-panel{right:12px;bottom:74px;width:calc(100vw - 24px);max-height:70vh}.crimbot-quick{grid-template-columns:1fr 1fr}}
+/* CrimBot AI polish: compact round launcher, branded panel, scrollable content */
+.crimbot-head{background:linear-gradient(180deg,rgba(74,7,7,.94),rgba(58,5,5,.9));}
+.crimbot-title{font-family:'ClassyVogue','Cormorant Garamond','Georgia',serif;font-size:14px;letter-spacing:.04em}
+.crimbot-status{font-family:'Montserrat',sans-serif}
+.crimbot-body{scrollbar-width:thin;scrollbar-color:#c9a96e rgba(255,255,255,.04);max-height:430px}
+.crimbot-body::-webkit-scrollbar{width:4px}.crimbot-body::-webkit-scrollbar-track{background:rgba(255,255,255,.03)}.crimbot-body::-webkit-scrollbar-thumb{background:#c9a96e;border-radius:4px}
+.crimbot-msg{font-family:'Montserrat',sans-serif;color:rgba(242,227,211,.88)}
+.crimbot-answer{max-height:180px;overflow:auto;scrollbar-width:thin;scrollbar-color:#c9a96e rgba(255,255,255,.03)}
+.crimbot-answer::-webkit-scrollbar{width:3px}.crimbot-answer::-webkit-scrollbar-thumb{background:#c9a96e;border-radius:3px}
+.crimbot-quick button{font-family:'Montserrat',sans-serif;color:#e2cfa0;background:linear-gradient(180deg,rgba(74,7,7,.32),rgba(201,169,110,.04));}
+.crimbot-input{background:rgba(74,7,7,.38)}
+@media (max-width:600px){#crimbot-launcher{right:12px;bottom:12px;width:44px;height:44px}.crimbot-mark{width:34px;height:34px}.crimbot-body{max-height:48vh}.crimbot-answer{max-height:24vh}}
+</style>
+<style>
+/* CrimBot refinement: compact scrollable quick options, cleaner round mark, slightly lower launcher */
+#crimbot-launcher{right:18px;bottom:8px;width:46px;height:46px;background:transparent!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;z-index:2147483002}
+.crimbot-mark{width:40px;height:40px;border:1px solid rgba(201,169,110,.9);border-radius:50%;background:transparent;box-shadow:none;font-size:0;overflow:visible}
+.crimbot-mark::before,.crimbot-mark::after{content:none!important}
+.crimbot-online{right:-2px;top:-2px;width:8px;height:8px;border:1px solid #4a0707;box-shadow:0 0 0 2px rgba(73,209,109,.14)}
+#crimbot-panel{right:18px;bottom:62px}
+.crimbot-body{min-height:0}
+.crimbot-quick{max-height:148px;overflow-y:auto;padding-right:2px;scrollbar-width:thin;scrollbar-color:#c9a96e rgba(255,255,255,.03)}
+.crimbot-quick::-webkit-scrollbar{width:4px}.crimbot-quick::-webkit-scrollbar-track{background:rgba(255,255,255,.03)}.crimbot-quick::-webkit-scrollbar-thumb{background:#c9a96e;border-radius:4px}
+.crimbot-quick button{min-height:40px;border-radius:12px;padding:8px 11px}
+@media (max-width:600px){#crimbot-launcher{right:10px;bottom:7px;width:44px;height:44px}.crimbot-mark{width:36px;height:36px}.crimbot-mark::before{font-size:10px}#crimbot-panel{right:10px;bottom:58px;width:calc(100vw - 20px)}.crimbot-quick{max-height:132px;gap:6px}.crimbot-quick button{min-height:38px}}
+
+/* CrimBot robot icon + quick-options scroll refinement */
+.crimbot-mark{display:grid!important;place-items:center!important;border-radius:50%;background:transparent!important;overflow:visible!important}
+.crimbot-robot{position:relative;width:25px;height:25px;display:block;filter:drop-shadow(0 2px 3px rgba(0,0,0,.14))}
+.crimbot-antenna{position:absolute;left:11px;top:0;width:3px;height:5px;background:#c9a96e;border-radius:3px}
+.crimbot-antenna::after{content:'';position:absolute;left:-2px;top:-4px;width:7px;height:7px;border:1px solid #c9a96e;border-radius:50%;background:#4a0707;box-sizing:border-box}
+.crimbot-robot-head{position:absolute;left:3px;top:6px;width:19px;height:15px;border:1.2px solid #c9a96e;border-radius:6px 6px 5px 5px;background:rgba(74,7,7,.6);box-sizing:border-box}
+.crimbot-eye{position:absolute;top:4px;width:3px;height:3px;border-radius:50%;background:#c9a96e}.crimbot-eye:first-child{left:4px}.crimbot-eye:nth-child(2){right:4px}
+.crimbot-smile{position:absolute;left:6px;bottom:2px;width:7px;height:3px;border-bottom:1px solid #c9a96e;border-radius:0 0 8px 8px}
+.crimbot-ear{position:absolute;top:10px;width:4px;height:7px;border:1px solid #c9a96e;border-radius:2px;background:#4a0707}.crimbot-ear-left{left:0}.crimbot-ear-right{right:0}
+.crimbot-quick{max-height:112px;overflow-y:auto;overscroll-behavior:contain;scroll-behavior:smooth;padding-right:5px;scrollbar-width:thin;scrollbar-color:#c9a96e rgba(255,255,255,.04)}
+.crimbot-quick::-webkit-scrollbar{width:4px}.crimbot-quick::-webkit-scrollbar-track{background:rgba(255,255,255,.03);border-radius:4px}.crimbot-quick::-webkit-scrollbar-thumb{background:rgba(201,169,110,.72);border-radius:4px}
+.crimbot-quick button{transition:transform .16s ease,background .16s ease,border-color .16s ease}.crimbot-quick button:active{transform:scale(.985)}
+@media (max-width:600px){.crimbot-robot{width:23px;height:23px}.crimbot-quick{max-height:100px;padding-right:4px}.crimbot-quick button{min-height:36px}}
+</style>
+
+<style>
+/* CrimBot panel size refinement */
+#crimbot-panel{
+  width:min(430px,calc(100vw - 28px));
+  max-height:min(640px,calc(100vh - 108px));
+}
+.crimbot-body{
+  padding:16px;
+}
+.crimbot-msg{
+  font-size:13px;
+  line-height:1.6;
+}
+.crimbot-quick{
+  max-height:150px;
+}
+.crimbot-answer{
+  max-height:210px;
+  font-size:12px;
+}
+@media (max-width:600px){
+  #crimbot-panel{
+    width:calc(100vw - 20px);
+    max-height:72vh;
+  }
+  .crimbot-body{padding:14px;}
+  .crimbot-quick{max-height:120px;}
+  .crimbot-answer{max-height:24vh;}
+}
+</style>
+
+<style id="crimbot-final-size-fix">
+/* CrimBot medium-height refinement. Keep compact width and make quick options a clean swipe row. */
+#crimbot-panel{
+  width:min(350px,calc(100vw - 28px)) !important;
+  height:min(520px,calc(100vh - 132px)) !important;
+  max-height:min(520px,calc(100vh - 132px)) !important;
+}
+#crimbot-launcher{
+  width:46px !important;
+  height:46px !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+.crimbot-mark{
+  width:40px !important;
+  height:40px !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+.crimbot-body{
+  flex:1 1 auto !important;
+  min-height:0 !important;
+  max-height:none !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+}
+.crimbot-quick{
+  display:flex !important;
+  flex-wrap:nowrap !important;
+  align-items:center !important;
+  gap:7px !important;
+  max-height:none !important;
+  overflow-x:auto !important;
+  overflow-y:hidden !important;
+  overscroll-behavior-x:contain !important;
+  -webkit-overflow-scrolling:touch !important;
+  scrollbar-width:none !important;
+  padding:2px 1px 4px !important;
+}
+.crimbot-quick::-webkit-scrollbar{display:none !important;width:0 !important;height:0 !important}
+.crimbot-quick button{
+  flex:0 0 auto !important;
+  width:auto !important;
+  min-width:max-content !important;
+  min-height:36px !important;
+  white-space:nowrap !important;
+}
+@media (max-width:600px){
+  #crimbot-panel{
+    width:calc(100vw - 20px) !important;
+    height:min(520px,68vh) !important;
+    max-height:68vh !important;
+  }
+  #crimbot-launcher{width:44px !important;height:44px !important;}
+  .crimbot-mark{width:38px !important;height:38px !important;}
+}
+</style>
+<style id="crimbot-latest-layout-fix">
+/* Keep quick-topic scroller directly above the message composer. */
+#crimbot-panel{width:min(350px,calc(100vw - 28px)) !important;}
+.crimbot-body{display:flex !important;flex-direction:column !important;min-height:0 !important;overflow:hidden !important;}
+.crimbot-msg{flex:0 0 auto !important;}
+.crimbot-answer{flex:1 1 auto !important;min-height:0 !important;max-height:none !important;overflow:auto !important;}
+.crimbot-quick{flex:0 0 auto !important;order:3 !important;max-height:none !important;overflow-x:auto !important;overflow-y:hidden !important;scrollbar-width:none !important;-ms-overflow-style:none !important;padding:6px 1px 3px !important;margin-top:2px !important;}
+.crimbot-quick::-webkit-scrollbar{display:none !important;width:0 !important;height:0 !important;}
+.crimbot-quick button{flex:0 0 auto !important;}
+@media (max-width:600px){
+  #crimbot-panel{right:14px !important;width:calc(100vw - 28px) !important;max-width:330px !important;}
+  .crimbot-body{padding:12px !important;}
+  .crimbot-quick{gap:6px !important;padding-top:5px !important;}
+  .crimbot-quick button{min-height:34px !important;padding:7px 10px !important;font-size:10px !important;}
+}
+</style>
+
+<style id="crimbot-user-message-fix">
+#crimbot-chat-log{display:flex;flex-direction:column;gap:8px;max-height:100%;overflow-y:auto;overscroll-behavior:contain;padding:1px 1px 4px;scroll-behavior:smooth;}
+#crimbot-chat-log::-webkit-scrollbar{width:3px}
+#crimbot-chat-log::-webkit-scrollbar-thumb{background:rgba(201,169,110,.55);border-radius:3px}
+.crimbot-chat-user,.crimbot-chat-bot{max-width:88%;padding:9px 10px;border-radius:11px;font-size:11px;line-height:1.5;word-break:break-word;overflow-wrap:anywhere;}
+.crimbot-chat-user{align-self:flex-end;background:rgba(201,169,110,.13);border:1px solid rgba(201,169,110,.30);color:#f3e6d8;border-bottom-right-radius:4px;text-align:left;}
+.crimbot-chat-bot{align-self:flex-start;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);color:rgba(242,227,211,.90);border-bottom-left-radius:4px;}
+#crimbot-input{color:#f6eadc !important;-webkit-text-fill-color:#f6eadc !important;caret-color:#c9a96e !important;}
+#crimbot-input::placeholder{color:rgba(242,227,211,.48) !important;-webkit-text-fill-color:rgba(242,227,211,.48) !important;}
+@media(max-width:600px){.crimbot-chat-user,.crimbot-chat-bot{font-size:10.5px;padding:8px 9px;max-width:90%;}}
+</style>
+
+
+<style id="crimbot-exact-final-fix">
+/* EXACT requested fixes only: desktop launcher right of volume, clean full chat scroller, no extra message box. */
+@media (min-width:769px){
+  .hero__mute-btn{z-index:2147483006 !important;}
+  #crimbot-launcher{
+    right:2px !important;
+    bottom:6.8vh !important;
+    width:40px !important;
+    height:40px !important;
+    z-index:2147483005 !important;
+  }
+  #crimbot-panel{
+    right:2px !important;
+    bottom:calc(6.8vh + 48px) !important;
+  }
+}
+/* Keep the conversation itself as the only message scroller. */
+#crimbot-answer{
+  flex:1 1 auto !important;
+  min-height:0 !important;
+  max-height:none !important;
+  overflow:hidden !important;
+  padding:0 !important;
+  margin:0 !important;
+  border:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+#crimbot-chat-log{
+  height:100% !important;
+  max-height:none !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  padding:1px 1px 5px !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  scrollbar-width:none !important;
+}
+#crimbot-chat-log::-webkit-scrollbar{width:0 !important;height:0 !important;display:none !important;}
+/* Rare Presence: remove artificial zoom/crop; show the complete source frame. */
+.rare-presence__video,
+.rare-presence__video_mobile{
+  transform:translate(-50%, -50%) !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  min-width:100% !important;
+  min-height:100% !important;
+  width:100% !important;
+  height:100% !important;
+}
+</style>
+
+<style id="crimbot-layout-and-logo-final">
+/* Requested fixes only: transparent Crimson logo + floating CrimBot above volume. */
+.navbar__logo, .footer__brand, .navbar__logo img, .footer__logo-img{background:transparent !important;box-shadow:none !important;}
+#crimbot-launcher{position:fixed !important;width:44px !important;height:44px !important;padding:0 !important;margin:0 !important;background:transparent !important;border:0 !important;box-shadow:none !important;display:grid !important;place-items:center !important;z-index:2147483646 !important;pointer-events:auto !important;}
+#crimbot-launcher .crimbot-mark{width:44px !important;height:44px !important;border:0 !important;border-radius:0 !important;background:transparent !important;box-shadow:none !important;display:grid !important;place-items:center !important;}
+#crimbot-launcher .crimbot-robot{width:34px !important;height:34px !important;}
+#crimbot-panel{z-index:2147483645 !important;display:none !important;}
+#crimbot-panel.is-open{display:flex !important;}
+@media(max-width:768px){
+  #crimbot-launcher{width:38px !important;height:38px !important;}
+  #crimbot-launcher .crimbot-mark{width:38px !important;height:38px !important;}
+  #crimbot-launcher .crimbot-robot{width:30px !important;height:30px !important;}
+}
+</style>
+
+<style id="crimbot-scroll-size-final">
+#crimbot-launcher{position:fixed!important;width:46px!important;height:46px!important;right:39px!important;bottom:calc(6.8vh + 52px)!important;left:auto!important;top:auto!important;padding:0!important;margin:0!important;display:grid!important;place-items:center!important;background:transparent!important;border:0!important;box-shadow:none!important;z-index:2147483646!important;visibility:visible!important;}
+#crimbot-launcher .crimbot-mark{width:46px!important;height:46px!important;display:grid!important;place-items:center!important;background:transparent!important;border:0!important;border-radius:0!important;overflow:visible!important;box-shadow:none!important;}
+#crimbot-launcher .crimbot-robot{position:relative!important;width:36px!important;height:36px!important;display:block!important;}
+#crimbot-launcher .crimbot-antenna{left:16px!important;top:0!important;width:3px!important;height:7px!important;}
+#crimbot-launcher .crimbot-antenna::after{left:-2px!important;top:-5px!important;width:7px!important;height:7px!important;}
+#crimbot-launcher .crimbot-robot-head{left:6px!important;top:8px!important;width:24px!important;height:19px!important;border-radius:7px 7px 6px 6px!important;}
+#crimbot-launcher .crimbot-eye{top:5px!important;width:3px!important;height:3px!important;}
+#crimbot-launcher .crimbot-eye:first-child{left:5px!important;}
+#crimbot-launcher .crimbot-eye:nth-child(2){right:5px!important;}
+#crimbot-launcher .crimbot-smile{left:8px!important;bottom:2px!important;width:8px!important;height:4px!important;}
+#crimbot-launcher .crimbot-ear{top:13px!important;width:5px!important;height:8px!important;border-radius:2px!important;}
+#crimbot-launcher .crimbot-ear-left{left:0!important;}
+#crimbot-launcher .crimbot-ear-right{right:0!important;}
+#crimbot-launcher .crimbot-online{right:0!important;top:0!important;width:9px!important;height:9px!important;}
+#crimbot-panel{z-index:2147483645!important;}
+@media(max-width:768px){
+#crimbot-launcher{width:40px!important;height:40px!important;right:19px!important;bottom:calc(5.8vh + 46px)!important;}
+#crimbot-launcher .crimbot-mark{width:40px!important;height:40px!important;}
+#crimbot-launcher .crimbot-robot{width:32px!important;height:32px!important;}
+#crimbot-launcher .crimbot-antenna{left:14px!important;}
+#crimbot-launcher .crimbot-robot-head{left:5px!important;top:7px!important;width:22px!important;height:17px!important;}
+#crimbot-launcher .crimbot-ear{top:12px!important;width:5px!important;height:7px!important;}
+#crimbot-launcher .crimbot-eye{top:4px!important;}
+#crimbot-launcher .crimbot-eye:first-child{left:4px!important;}
+#crimbot-launcher .crimbot-eye:nth-child(2){right:4px!important;}
+#crimbot-launcher .crimbot-smile{left:7px!important;width:8px!important;}
+}
+</style>
+<style id="crimbot-final-volume-anchor-fix">
+/* Final CrimBot fix: stay directly above the real volume button; panel opens above the robot. */
+#crimbot-launcher{position:fixed!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;visibility:visible!important;z-index:2147483646!important;pointer-events:auto!important;}
+#crimbot-panel{z-index:2147483645!important;}
+@media(max-width:768px){#crimbot-panel{max-width:calc(100vw - 20px)!important;}}
+</style>
+</head>
+<body class="gallery-page-body">
+<!-- ─── HEADER (NAVBAR) ─── -->
+<header class="navbar">
+<div class="navbar__container">
+<a aria-label="The Crimson Borivali – Home" class="navbar__logo" href="index.html">
+<img alt="The Crimson Borivali" decoding="async" height="52" src="assets/Logo/crimson-logo-clear.webp" width="140"/>
+</a>
+<nav aria-label="Main navigation" class="navbar__nav">
+<ul class="navbar__list" role="list">
+<li><a class="navbar__link" href="index.html#vision">The Vision</a></li>
+<li><a class="navbar__link" href="index.html#location">Location</a></li>
+<li><a class="navbar__link" href="gallery.html" style="color:var(--color-gold)">Gallery</a></li>
+<li><a class="navbar__link" href="index.html#architect">Experience</a></li>
+<li><a class="navbar__link" href="index.html#partners">About Brand</a></li>
+<li><a class="navbar__link" href="index.html#contact">Contact</a></li>
+</ul>
+</nav>
+<div class="navbar__cta-wrap">
+<a class="navbar__cta" href="index.html#contact">Book a Private Preview</a>
+</div>
+<button aria-controls="navMobile" aria-expanded="false" aria-label="Open navigation menu" class="navbar__hamburger" id="navHamburger">
+<span></span><span></span><span></span>
+</button>
+</div>
+<nav aria-hidden="true" aria-label="Mobile navigation" class="navbar__mobile" id="navMobile">
+<ul class="navbar__mobile-list" role="list">
+<li class="navbar__mobile-item"><a class="navbar__mobile-link" href="index.html#vision">The Vision</a></li>
+<li class="navbar__mobile-item"><a class="navbar__mobile-link" href="index.html#location">Location</a></li>
+<li class="navbar__mobile-item"><a class="navbar__mobile-link" href="gallery.html">Gallery</a></li>
+<li class="navbar__mobile-item"><a class="navbar__mobile-link" href="index.html#architect">Experience</a></li>
+<li class="navbar__mobile-item"><a class="navbar__mobile-link" href="index.html#partners">About Brand</a></li>
+<li class="navbar__mobile-item"><a class="navbar__mobile-link" href="index.html#contact">Contact</a></li>
+<li><a class="navbar__mobile-cta" href="index.html#contact">Book a Private Preview</a></li>
+</ul>
+</nav>
+</header>
+<main style="padding-top: var(--nav-height, 88px);">
+<section aria-labelledby="gallery-heading" class="gallery-section" id="gallery">
+<!-- Header -->
+<div class="gallery__header">
+<h2 class="gallery__title" id="gallery-heading">A Gallery Of<br/>Excellence</h2>
+</div>
+<!-- Toggle Switch -->
+<div class="gallery__toggle-container">
+<span class="gallery__toggle-label" id="labelInterior">Interior</span>
+<div aria-label="Toggle between Interior and Exterior Gallery" class="gallery__switch" data-state="middle" id="gallerySwitch" role="button" tabindex="0">
+<div class="gallery__switch-zone" id="switchZoneLeft"></div>
+<span class="gallery__switch-ball"><span class="gallery__switch-text">OFF</span></span>
+<div class="gallery__switch-zone" id="switchZoneRight"></div>
+</div>
+<span class="gallery__toggle-label" id="labelExterior">Exterior</span>
+</div>
+</section>
+</main>
+<footer class="gallery-simple-footer">
+<p class="copyright-text">2026 All Rights Reserved by The Crimson | Powered by <a href="https://kalakaarglobal.com/" rel="noopener noreferrer" target="_blank">Kalakaar Global</a></p>
+</footer>
+<script>
+  (function () {
+    'use strict';
+
+    /* ── Navbar hamburger ── */
+    var hamburger = document.getElementById('navHamburger');
+    var mobileMenu = document.getElementById('navMobile');
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', function () {
+        var open = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', String(!open));
+        mobileMenu.setAttribute('aria-hidden', String(open));
+        mobileMenu.classList.toggle('is-open', !open);
+        hamburger.classList.toggle('is-open', !open);
+      });
+    }
+
+    /* ── Toggle switch with localStorage and redirection ── */
+    var gallerySwitch  = document.getElementById('gallerySwitch');
+    var labelInterior  = document.getElementById('labelInterior');
+    var labelExterior  = document.getElementById('labelExterior');
+
+    if (gallerySwitch) {
+      function setMode(state, shouldRedirect) {
+        gallerySwitch.setAttribute('data-state', state);
+
+        if (state === 'interior') {
+          labelInterior.classList.add('is-active');
+          labelExterior.classList.remove('is-active');
+        } else if (state === 'exterior') {
+          labelExterior.classList.add('is-active');
+          labelInterior.classList.remove('is-active');
+        } else {
+          labelInterior.classList.remove('is-active');
+          labelExterior.classList.remove('is-active');
+        }
+
+        // Save state to localStorage
+        localStorage.setItem('gallery_state', state);
+
+        // Redirect back to home page gallery section after a short delay (so the toggle transition is visible)
+        if (shouldRedirect) {
+          setTimeout(function() {
+            window.location.href = 'index.html#gallery';
+          }, 350);
+        }
+      }
+
+      // Read initial state from storage
+      var savedState = localStorage.getItem('gallery_state') || 'middle';
+      setMode(savedState, false);
+
+      var switchZoneLeft = document.getElementById('switchZoneLeft');
+      var switchZoneRight = document.getElementById('switchZoneRight');
+
+      // Drag-and-slide variables for the gallery switch ball
+      var isDragging = false;
+      var hasDragged = false;
+      var startX = 0;
+      var startTranslate = 33;
+      var currentTranslate = 33;
+      var isClickBlocked = false;
+
+      var ball = gallerySwitch.querySelector('.gallery__switch-ball');
+
+      var handleDragStart = function (clientX) {
+        isDragging = true;
+        hasDragged = false;
+        startX = clientX;
+        gallerySwitch.classList.add('is-dragging');
+        document.body.classList.add('is-dragging');
+
+        var state = gallerySwitch.getAttribute('data-state') || 'middle';
+        if (state === 'interior') startTranslate = 0;
+        else if (state === 'exterior') startTranslate = 66;
+        else startTranslate = 33;
+
+        currentTranslate = startTranslate;
+
+        if (ball) {
+          ball.style.transition = 'none';
+        }
+      };
+
+      var handleDragMove = function (clientX) {
+        if (!isDragging) return;
+        var deltaX = clientX - startX;
+        if (Math.abs(deltaX) > 4) {
+          hasDragged = true;
+        }
+        currentTranslate = startTranslate + deltaX;
+        currentTranslate = Math.max(0, Math.min(66, currentTranslate));
+
+        if (ball) {
+          ball.style.transform = 'translateX(' + currentTranslate + 'px)';
+        }
+      };
+
+      var handleDragEnd = function () {
+        // Defensively strip dragging classes first so the cursor always resets
+        gallerySwitch.classList.remove('is-dragging');
+        document.body.classList.remove('is-dragging');
+
+        if (!isDragging) return;
+        isDragging = false;
+
+        if (ball) {
+          ball.style.transition = '';
+          ball.style.transform = '';
+        }
+
+        if (hasDragged) {
+          isClickBlocked = true;
+          setTimeout(function () {
+            isClickBlocked = false;
+          }, 50);
+
+          var targetState = 'middle';
+          if (currentTranslate < 16.5) {
+            targetState = 'interior';
+          } else if (currentTranslate > 49.5) {
+            targetState = 'exterior';
+          } else {
+            targetState = 'middle';
+          }
+          setMode(targetState, true);
+        }
+      };
+
+      // Attach mouse event listeners to gallerySwitch
+      gallerySwitch.addEventListener('mousedown', function (e) {
+        if (e.button !== 0) return; // Only track left clicks
+        e.preventDefault(); // Prevents selection
+        handleDragStart(e.clientX);
+      });
+
+      // Attach touch event listeners to gallerySwitch
+      gallerySwitch.addEventListener('touchstart', function (e) {
+        if (e.touches && e.touches.length > 0) {
+          handleDragStart(e.touches[0].clientX);
+        }
+      }, { passive: true });
+
+      // Track move and end on window
+      window.addEventListener('mousemove', function (e) {
+        handleDragMove(e.clientX);
+      });
+
+      window.addEventListener('touchmove', function (e) {
+        if (isDragging) {
+          if (e.touches && e.touches.length > 0) {
+            handleDragMove(e.touches[0].clientX);
+          }
+          e.preventDefault(); // Prevents page scrolling during drag
+        }
+      }, { passive: false });
+
+      window.addEventListener('mouseup', handleDragEnd);
+      window.addEventListener('touchend', handleDragEnd);
+
+      if (switchZoneLeft && switchZoneRight) {
+        switchZoneLeft.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (isClickBlocked) return;
+          var cur = gallerySwitch.getAttribute('data-state') || 'middle';
+          var nextState = (cur === 'interior') ? 'middle' : 'interior';
+          setMode(nextState, true);
+        });
+
+        switchZoneRight.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (isClickBlocked) return;
+          var cur = gallerySwitch.getAttribute('data-state') || 'middle';
+          var nextState = (cur === 'exterior') ? 'middle' : 'exterior';
+          setMode(nextState, true);
+        });
+      }
+
+      gallerySwitch.addEventListener('click', function (e) {
+        if (isClickBlocked) return;
+        if (e.target === gallerySwitch) {
+          var rect = gallerySwitch.getBoundingClientRect();
+          var clickX = e.clientX - rect.left;
+          var cur = gallerySwitch.getAttribute('data-state') || 'middle';
+          if (clickX < rect.width / 2) {
+            var nextState = (cur === 'interior') ? 'middle' : 'interior';
+            setMode(nextState, true);
+          } else {
+            var nextState = (cur === 'exterior') ? 'middle' : 'exterior';
+            setMode(nextState, true);
+          }
+        }
+      });
+
+      gallerySwitch.addEventListener('keydown', function (e) {
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          var cur = gallerySwitch.getAttribute('data-state') || 'middle';
+          var nextState = 'middle';
+          if (cur === 'middle') nextState = 'interior';
+          else if (cur === 'interior') nextState = 'exterior';
+          else nextState = 'middle';
+          setMode(nextState, true);
+        }
+      });
+
+      labelInterior.addEventListener('click', function () {
+        setMode('interior', true);
+      });
+
+      labelExterior.addEventListener('click', function () {
+        setMode('exterior', true);
+      });
+    }
+  })();
+  </script>
+
+  <button id="crimbot-launcher" type="button" aria-label="Open CrimBot AI" aria-expanded="false">
+    <span class="crimbot-mark" aria-label="CrimBot"><span class="crimbot-robot" aria-hidden="true"><span class="crimbot-antenna"></span><span class="crimbot-robot-head"><span class="crimbot-eye"></span><span class="crimbot-eye"></span><span class="crimbot-smile"></span></span><span class="crimbot-ear crimbot-ear-left"></span><span class="crimbot-ear crimbot-ear-right"></span></span><span class="crimbot-online" aria-hidden="true"></span></span>
+  </button>
+  <section id="crimbot-panel" aria-label="CrimBot AI assistant">
+    <div class="crimbot-head"><div><div class="crimbot-title">CrimBot AI</div><div class="crimbot-status"><i></i> Online</div></div><button id="crimbot-close" class="crimbot-close" type="button" aria-label="Close">×</button></div>
+    <div class="crimbot-body"><div id="crimbot-answer" class="crimbot-answer"><div id="crimbot-chat-log" role="log" aria-live="polite"><div class="crimbot-chat-bot crimbot-intro">Ask about The Crimson, Interior, Exterior, amenities, location, gallery or private preview.</div><div class="crimbot-chat-bot">Hello. I’m CrimBot AI. How can I help with The Crimson?</div></div></div><div class="crimbot-quick"><button type="button" data-q="location">Location</button><button type="button" data-q="interior">Interior</button><button type="button" data-q="exterior">Exterior</button><button type="button" data-q="amenities">Amenities</button><button type="button" data-q="gallery">Gallery</button><button type="button" data-q="preview">Private Preview</button></div></div>
+    <div class="crimbot-input"><input id="crimbot-input" type="text" placeholder="Ask about The Crimson…" aria-label="Ask CrimBot AI"/><button id="crimbot-send" type="button">Send</button></div>
+  </section>
+  <script src="js/crimbot.js" defer></script>
+</body>
+</html>

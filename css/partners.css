@@ -1,0 +1,206 @@
+/* ============================================================
+   POWERED BY EXCELLENCE — PARTNERS SECTION
+   ============================================================ */
+
+.partners-section {
+  background-color: #ffffff; /* Pure white background */
+  color: #4A0707; /* Deep maroon */
+  padding: 100px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.partners__header {
+  text-align: center;
+  margin-bottom: 60px;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.partners__title {
+  font-family: 'ClassyVogue', 'Cormorant Garamond', 'Georgia', serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 500;
+  color: #4A0707;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.partners__desc {
+  font-size: clamp(0.8rem, 1.2vw, 0.92rem);
+  color: #5C3A3A;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Row-based centered layout matching design screenshot */
+.partners__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.partners__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px 60px;
+  width: 100%;
+}
+
+.partners__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+}
+
+/* Light cream placeholder box for future logos */
+.partners__logo-placeholder {
+  width: 220px;
+  height: 110px;
+  background-color: #ffffff;
+  border: none;
+  margin-bottom: 14px;
+  position: relative;
+  transition: all 0.4s var(--ease-out);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.partners__logo {
+  max-width: 82%;
+  max-height: 82%;
+  object-fit: contain;
+  display: block;
+  mix-blend-mode: multiply;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.partners__item:hover .partners__logo-placeholder {
+  /* background and border removed — animation only */
+}
+
+.partners__item:hover .partners__logo {
+  transform: scale(1.05);
+}
+
+.partners__name {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8C2323; /* Muted red name */
+  text-align: center;
+  margin: 0;
+}
+
+/* ============================================================
+   RESPONSIVE OVERRIDES
+   ============================================================ */
+
+@media (max-width: 992px) {
+  .partners-section {
+    padding: 80px 0;
+  }
+
+  .partners__grid {
+    gap: 40px;
+  }
+
+  .partners__row {
+    gap: 40px 30px;
+  }
+
+  .partners__item {
+    width: 180px;
+  }
+
+  .partners__logo-placeholder {
+    width: 180px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-section {
+    padding: 60px 0;
+  }
+  
+  .partners__header {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-section {
+    height: 490px !important;
+    min-height: 490px !important;
+    padding: 62px 0 58px !important;
+  }
+  .partners__header {
+    margin-bottom: 40px !important;
+    padding: 0 20px !important;
+  }
+  .partners__title {
+    width: 100% !important;
+    height: 32px !important;
+    margin-bottom: 18px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    line-height: 32px !important;
+    letter-spacing: 0.05em !important;
+    text-align: center !important;
+    color: #8D0003 !important;
+  }
+  .partners__desc {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 9px !important;
+    text-align: center !important;
+    padding: 0 !important;
+  }
+  .partners__grid {
+    padding: 0 34px !important;
+    gap: 24px !important;
+  }
+  .partners__row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 18px !important;
+  }
+  .partners__row:last-child {
+    grid-template-columns: repeat(2, 88px) !important;
+    justify-content: center !important;
+    gap: 58px !important;
+  }
+  .partners__item {
+    width: 100% !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+  .partners__logo-placeholder {
+    width: 100% !important;
+    height: 48px !important;
+    margin-bottom: 7px !important;
+    background: transparent !important;
+  }
+  .partners__name {
+    font-size: 5.5px !important;
+    line-height: 1.35 !important;
+    color: var(--color-maroon-text) !important;
+  }
+}

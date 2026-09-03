@@ -1,0 +1,31 @@
+/* ============================================================
+   DESIGN SYSTEM — CSS CUSTOM PROPERTIES
+   ============================================================ */
+
+:root {
+  /* ── Brand Colors ── */
+  --color-maroon:        #4A0707;
+  --color-maroon-dark:   #3a0505;
+  --color-maroon-scroll: #4A0707;
+
+  --color-gold:          #c9a96e;
+  --color-gold-light:    #e2cfa0;
+  --color-gold-btn-from: #d4bc8a;
+  --color-gold-btn-to:   #b8975a;
+
+  --color-white:         #ffffff;
+  --color-nav-text:      #c9a96e;
+  --color-nav-hover:     #e2cfa0;
+
+  /* ── Typography ── */
+  --font-display: 'Montserrat', sans-serif;
+  --font-nav:     'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+  /* ── Layout ── */
+  --nav-height:   78px;
+  --max-width:    1440px;
+
+  /* ── Easing ── */
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-std:     cubic-bezier(0.4, 0, 0.2, 1);
+}

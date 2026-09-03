@@ -1,0 +1,23 @@
+/* ============================================================
+   PLACEHOLDER SECTIONS — replaced section by section
+   ============================================================ */
+
+.placeholder-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  border-top: 1px solid rgba(196, 158, 80, 0.06);
+}
+
+.placeholder-section:nth-child(odd)  { background: #0f0406; }
+.placeholder-section:nth-child(even) { background: #0b0204; }
+
+.placeholder-section p {
+  font-family: var(--font-nav);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(196, 158, 80, 0.28);
+}

@@ -1,0 +1,216 @@
+/* ============================================================
+   WE STAND WHERE FEW STOOD — BUILDER SECTION
+   ============================================================ */
+
+.builder-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #7A1315; /* Crimson background */
+  background-image: url('../assets/banners/Rectangle 37_red.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: normal;
+  color: #F2E3D3;
+}
+
+.builder__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr; /* Text left, gold logo right */
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+}
+
+/* ── Left Column: Content ── */
+.builder__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.builder__title {
+  font-family: 'ClassyVogue', 'Cormorant Garamond', 'Georgia', serif;
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 500;
+  color: #d1b78a;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+/* Thin divider with one precisely centered outlined diamond */
+.builder__divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 28px;
+}
+
+.builder__divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: #E0C295;
+}
+
+.builder__divider-diamond {
+  width: 11px;
+  height: 11px;
+  flex: 0 0 11px;
+  border: 1px solid #E0C295;
+  background: #7A1315;
+  transform: rotate(45deg);
+}
+
+.builder__desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.8rem, 1.2vw, 0.92rem);
+  font-weight: 400;
+  line-height: 1.8;
+  color: rgba(209, 183, 138, 0.85);
+  margin: 0;
+  max-width: 600px;
+}
+
+/* ── Right Column: Logo ── */
+.builder__logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.builder__logo-img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35));
+  transition: transform 0.4s var(--ease-out);
+}
+
+.builder__logo-wrap:hover .builder__logo-img {
+  transform: scale(1.03); /* Soft branding zoom hover */
+}
+
+/* ── Bottom Tagline Footer ── */
+.builder__footer {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: rgba(209, 183, 138, 0.6);
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  margin-top: 70px;
+  padding: 0 24px;
+}
+
+.builder__copy-mobile {
+  display: none;
+}
+
+/* ============================================================
+   RESPONSIVE OVERRIDES
+   ============================================================ */
+
+@media (max-width: 992px) {
+  .builder-section {
+    padding: 80px 0;
+  }
+
+  .builder__container {
+    grid-template-columns: 1fr; /* Stack vertically on tablet/mobile */
+    gap: 50px;
+  }
+
+  .builder__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .builder__desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .builder__divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .builder__footer {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .builder-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .builder-section {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 72px 0 62px !important;
+  }
+  .builder__container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important;
+    padding: 0 34px !important;
+  }
+  .builder__logo-wrap {
+    order: 1;
+  }
+  .builder__content {
+    order: 2;
+  }
+  .builder__copy-desktop {
+    display: none !important;
+  }
+  .builder__copy-mobile {
+    display: inline !important;
+  }
+  .builder__title {
+    margin: 0 0 26px !important;
+    font-family: 'ClassyVogue', 'Cormorant Garamond', 'Georgia', serif !important;
+    font-size: 37px !important;
+    font-weight: 400 !important;
+    line-height: 1.03 !important;
+    text-align: center !important;
+  }
+  .builder__divider {
+    width: 216px !important;
+    max-width: 216px !important;
+    margin: 0 auto 32px !important;
+  }
+  .builder__desc {
+    max-width: 335px !important;
+    padding: 0 !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 9px !important;
+    line-height: 1.55 !important;
+    text-align: center !important;
+  }
+  .builder__logo-img {
+    max-width: 154px !important;
+  }
+  .builder__footer {
+    margin-top: 58px !important;
+    padding: 0 24px !important;
+    font-size: 8px !important;
+    line-height: 1.55 !important;
+  }
+}

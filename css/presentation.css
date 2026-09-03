@@ -1,0 +1,252 @@
+/* ============================================================
+   EXPERIENCE THE CRIMSON — ARCHITECT SECTION
+   ============================================================ */
+
+.presentation-section {
+  background-color: #FFF0D3; /* Light cream/beige matching Section 5 */
+  background-image: url('../assets/banners/Rectangle 37_cream_blend.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #4A0707; /* Deep maroon/burgundy */
+  width: 100%;
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.presentation__container {
+  max-width: 1440px; /* Expanded max-width to allow room for the text and image side-by-side */
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px; /* Reduced gap to maximize space for the image */
+  width: 100%;
+}
+
+/* ── Left Column: Content ── */
+.presentation__content {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-left: 0; /* Removed negative margins to prevent elements from going out of screen bounds */
+}
+
+.presentation__heading {
+  font-family: 'ClassyVogue', 'Cormorant Garamond', 'Georgia', serif;
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  font-weight: 500;
+  color: #4A0707;
+  margin: 0 0 12px 0;
+  line-height: 1.2;
+}
+
+.presentation__heading-mobile,
+.presentation__copy-mobile {
+  display: none;
+}
+
+/* Decorative divider with a precisely centered outlined diamond */
+.presentation__divider {
+  display: flex;
+  align-items: center;
+  width: clamp(260px, 33vw, 400px);
+  margin: 0 0 24px 0;
+}
+
+.presentation__divider-line {
+  flex: 1;
+  height: 1px;
+  background: #8C2323;
+}
+
+.presentation__divider-diamond {
+  width: 11px;
+  height: 11px;
+  flex: 0 0 11px;
+  border: 1px solid #8C2323;
+  background: #FFF0D3;
+  transform: rotate(45deg);
+}
+
+.presentation__desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.78rem, 1.15vw, 0.85rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #5C3A3A;
+  margin: 0 0 20px 0;
+  max-width: 850px; /* Allows long lines to stretch fully on wide displays */
+}
+
+/* Architect Brand Group */
+.presentation__architect-group {
+  margin: 0 0 20px 0;
+}
+
+.presentation__architect-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  font-weight: 700;
+  color: #8C2323; /* Muted red bold */
+  display: block;
+  margin-bottom: 4px;
+  text-transform: capitalize;
+}
+
+.presentation__architect-name {
+  font-family: 'Montserrat', sans-serif; /* Montserrat/sans-serif matches screenshot */
+  font-size: clamp(1.5rem, 2.6vw, 2.0rem);
+  font-weight: 700;
+  color: #8C2323; /* Muted red bold matches screenshot */
+  margin: 0;
+  line-height: 1.2;
+  text-transform: capitalize;
+}
+
+/* ── Right Column: Image ── */
+.presentation__image-wrap {
+  height: clamp(350px, 35vw, 450px); /* Restored original height constraints */
+  aspect-ratio: 908 / 488;          /* Locked aspect ratio of HC Pic 1.png */
+  flex-shrink: 0;
+  margin-right: -24px; /* Shift the image container right to fill the 24px padding gap */
+  box-shadow: 0 15px 45px rgba(74, 7, 7, 0.08); /* Maintained shadow */
+  border: 1px solid rgba(74, 7, 7, 0.05);       /* Maintained border */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFF8F0;                      /* Maintained background cream */
+}
+
+.presentation__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.presentation__image-wrap:hover .presentation__img {
+  transform: scale(1.03);
+}
+
+/* ============================================================
+   RESPONSIVE OVERRIDES
+   ============================================================ */
+
+
+
+@media (max-width: 992px) {
+  .presentation-section {
+    padding: 80px 0;
+  }
+
+  .presentation__container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .presentation__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .presentation__desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .presentation__divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .presentation__image-wrap {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    aspect-ratio: 908 / 488;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .presentation-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .presentation-section {
+    height: 844px !important;
+    min-height: 844px !important;
+    padding: 76px 0 72px !important;
+  }
+  .presentation__container {
+    gap: 50px !important;
+    padding: 0 28px !important;
+  }
+  .presentation__heading-desktop,
+  .presentation__copy-desktop {
+    display: none !important;
+  }
+  .presentation__heading-mobile,
+  .presentation__copy-mobile {
+    display: inline !important;
+  }
+  .presentation__heading {
+    width: auto !important;
+    height: auto !important;
+    margin: 0 0 35px !important;
+    font-family: 'ClassyVogue', 'Cormorant Garamond', 'Georgia', serif !important;
+    font-size: 37px !important;
+    font-weight: 400 !important;
+    line-height: 1.03 !important;
+    letter-spacing: 0 !important;
+    text-align: center !important;
+    color: #670204 !important;
+  }
+  .presentation__divider {
+    width: 216px !important;
+    max-width: 216px !important;
+    margin: 0 auto 34px !important;
+  }
+  .presentation__desc {
+    max-width: 335px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 9px !important;
+    font-weight: 400 !important;
+    line-height: 1.55 !important;
+    text-align: center !important;
+  }
+  .presentation__desc--intro {
+    margin-bottom: 34px !important;
+  }
+  .presentation__desc--bio {
+    line-height: 1.55 !important;
+  }
+  .presentation__architect-group {
+    width: 259px !important;
+    height: 50px !important;
+    margin: 0 0 30px !important;
+  }
+  .presentation__image-wrap {
+    width: 100% !important;
+    max-width: 334px !important;
+    margin: 0 auto !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+}
