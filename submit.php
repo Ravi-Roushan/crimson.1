@@ -24,7 +24,7 @@ $email = isset($data['email']) ? $data['email'] : '';
 $explore = isset($data['explore']) ? $data['explore'] : null;
 $message = isset($data['message']) ? $data['message'] : '';
 
-$recipientEmail = 'akashjadhav32004@gmail.com';
+$recipientEmail = 'rushabh.tcongsinfotech@gmail.com';
 
 // 1. Build Notification Email to Company
 $isPrivatePreview = ($formType === 'private-preview');

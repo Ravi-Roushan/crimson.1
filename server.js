@@ -30,7 +30,7 @@ app.post('/api/submit-form', async (req, res) => {
   if (explore) console.log(`Selected Options: ${JSON.stringify(explore)}`);
   if (message) console.log(`Message: ${message}`);
 
-  const recipientEmail = 'akashjadhav32004@gmail.com';
+  const recipientEmail = 'rushabh.tcongsinfotech@gmail.com';
   const senderEmail = process.env.EMAIL_USER || recipientEmail;
   const senderPass = process.env.EMAIL_PASS;
 
