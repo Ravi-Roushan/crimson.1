@@ -910,9 +910,10 @@
         data.message = formData.get('message');
       }
 
-      // Send post request (fallback to submit.php on server, use Node api on localhost)
-      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      const endpoint = 'submit.php';
+      // Send post request to the Node/Express API (works both locally
+      // via `npm start` and on Vercel, where server.js is the function
+      // that actually sends the emails).
+      const endpoint = '/api/submit-form';
 
       fetch(endpoint, {
         method: 'POST',
