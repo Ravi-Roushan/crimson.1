@@ -18,29 +18,21 @@
   const muteIcon = document.getElementById('muteIcon');
   const unmuteIcon = document.getElementById('unmuteIcon');
 
+  // True once the visitor has deliberately paused the video by tapping it,
+  // so nothing (scroll-back-into-view, unmuting, etc.) auto-resumes it
+  // until they tap it again.
+  let heroManuallyPaused = false;
+  // True for the one gesture that auto-unmutes the video, so the tap
+  // handler below doesn't also treat that same tap as a pause request.
+  let heroJustAutoUnmuted = false;
+
   if (heroVideo && heroMuteBtn) {
-    // Start muted so browser autoplay is allowed immediately.
-    heroVideo.defaultMuted = true;
-    heroVideo.muted = true;
     heroVideo.volume = 1;
-    updateMuteButtonUI(true);
 
-    // Start the hero video automatically. Do not attach any global
-    // pointer/keyboard handler, so clicking other controls (including
-    // CrimBot) cannot accidentally start the video.
-    const initialPlay = heroVideo.play();
-    if (initialPlay && typeof initialPlay.catch === 'function') {
-      initialPlay.catch(function () {});
-    }
-
-    // The volume button is the only control that changes the video's audio.
-    heroMuteBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      const isMuted = heroVideo.muted;
-      heroVideo.muted = !isMuted;
-      updateMuteButtonUI(!isMuted);
-      heroVideo.play().catch(function() {});
-    });
+    // Tracks whether the visitor deliberately muted it with the button,
+    // so the auto-unmute-on-interaction logic below never overrides
+    // an explicit choice to keep it muted.
+    let userMuted = false;
 
     function updateMuteButtonUI(isMuted) {
       if (isMuted) {
@@ -54,6 +46,93 @@
       }
     }
 
+    // Unmute automatically the first time the visitor interacts with the
+    // page at all (tap/click/scroll/key), so sound starts playing without
+    // them having to find and press the mute button first. Browsers block
+    // true unmuted autoplay before any interaction, so this is the closest
+    // equivalent: sound turns on the instant the visitor does anything.
+    function armUnmuteOnFirstInteraction() {
+      const events = ['pointerdown', 'touchstart', 'keydown', 'scroll'];
+
+      function onFirstInteraction(e) {
+        // Let the mute button's own click handler manage its own clicks.
+        if (e.target && heroMuteBtn.contains(e.target)) return;
+        if (userMuted) { cleanup(); return; }
+        heroVideo.muted = false;
+        if (!heroManuallyPaused) heroVideo.play().catch(function () {});
+        updateMuteButtonUI(false);
+        heroJustAutoUnmuted = true;
+        cleanup();
+      }
+
+      function cleanup() {
+        events.forEach(function (evt) {
+          document.removeEventListener(evt, onFirstInteraction, true);
+        });
+      }
+
+      events.forEach(function (evt) {
+        document.addEventListener(evt, onFirstInteraction, { capture: true, passive: true });
+      });
+    }
+
+    // Try to start the hero video playing WITH sound right away.
+    heroVideo.muted = false;
+    const initialPlay = heroVideo.play();
+    if (initialPlay && typeof initialPlay.catch === 'function') {
+      initialPlay.catch(function () {
+        // Browser blocked unmuted autoplay — fall back to muted autoplay
+        // and unmute as soon as the visitor interacts with the page.
+        heroVideo.muted = true;
+        heroVideo.play().catch(function () {});
+        updateMuteButtonUI(true);
+        armUnmuteOnFirstInteraction();
+      });
+    }
+    updateMuteButtonUI(heroVideo.muted);
+
+    // The volume button always lets the visitor turn audio off/on manually.
+    heroMuteBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      const isMuted = heroVideo.muted;
+      heroVideo.muted = !isMuted;
+      userMuted = heroVideo.muted;
+      updateMuteButtonUI(!isMuted);
+      if (!heroManuallyPaused) heroVideo.play().catch(function() {});
+    });
+  }
+
+  if (heroVideo) {
+    // Tapping the video itself toggles play/pause.
+    heroVideo.addEventListener('click', function () {
+      // Skip the tap that just auto-unmuted the video — that gesture
+      // is for turning sound on, not for pausing.
+      if (heroJustAutoUnmuted) { heroJustAutoUnmuted = false; return; }
+
+      if (heroVideo.paused) {
+        heroManuallyPaused = false;
+        heroVideo.play().catch(function () {});
+      } else {
+        heroManuallyPaused = true;
+        heroVideo.pause();
+      }
+    });
+
+    // Pause the video (and its audio) once it's scrolled out of view;
+    // resume automatically once it scrolls back into view, unless the
+    // visitor manually paused it themselves.
+    if ('IntersectionObserver' in window) {
+      const heroVisibilityObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            if (!heroManuallyPaused) heroVideo.play().catch(function () {});
+          } else {
+            heroVideo.pause();
+          }
+        });
+      }, { threshold: 0.15 });
+      heroVisibilityObserver.observe(heroVideo);
+    }
   }
 
   if (heroVideo && heroLoader) {
